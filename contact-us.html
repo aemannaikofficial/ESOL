@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – ESOL Education</title>
+    <meta name="description" content="Contact ESOL Education for questions about English courses, live classes, SELT qualifications, or technical support.">
+    <link rel="icon" href="https://esol.education/wp-content/uploads/2023/10/image003-100x100.png" sizes="32x32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=14">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container topbar-content">
+            <div class="topbar-right">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
+                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-user"></i> E Learning Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrap">
+            <div class="logo">
+                <a href="index.html"><img src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="how-youll-learn.html">How You'll Learn <i class="fa-solid fa-caret-down" style="font-size:0.8em;margin-left:4px;"></i></a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="scqf.html">SCQF</a></li>
+                    <li><a href="contact-us.html" class="active-link">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="burger"><i class="fa-solid fa-bars" style="color:var(--primary-blue);font-size:24px;"></i></div>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="contact-hero-banner">
+        <div class="container">
+            <h1 class="reveal ani-slideInUp">CONTACT US</h1>
+        </div>
+    </section>
+
+    <!-- Redesigned Contact Section -->
+    <section class="contact-redesign-section">
+        <div class="container">
+            <div class="contact-redesign-grid">
+                
+                <!-- Left: Support Agent Image -->
+                <div class="reveal ani-slideInLeft">
+                    <div class="contact-image-container">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/cc9-1-1024x576.png" alt="Support Agent">
+                    </div>
+                </div>
+
+                <!-- Right: Minimalist Form -->
+                <div class="reveal ani-slideInRight">
+                    <form id="contact-form" class="contact-form-minimal" onsubmit="handleFormSubmit(event)">
+                        <input type="text" name="name" class="form-field" placeholder="Name" required>
+                        <input type="email" name="email" class="form-field" placeholder="Email" required>
+                        <textarea name="message" class="form-field" placeholder="Message" required></textarea>
+                        
+                        <div class="captcha-container">
+                            <div class="captcha-left">
+                                <div class="captcha-checkbox">
+                                    <input type="checkbox" required>
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div class="captcha-text">I'm not a robot</div>
+                            </div>
+                            <div class="captcha-logo">
+                                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
+                                <span>reCAPTCHA</span>
+                                <span style="font-size:7px; color:#999;">Privacy - Terms</span>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: left;">
+                            <button type="submit" class="btn-send-large">SEND</button>
+                        </div>
+
+                        <p id="form-success" style="display:none; color:#020181; font-weight:700; margin-top:20px; font-family:var(--font-heading);">
+                            <i class="fa-solid fa-circle-check"></i> Thank you! Message sent successfully.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom-row">
+                <div class="footer-bottom-left">
+                    <span class="footer-copy">© 2024 ESOL Awards</span>
+                    <span class="footer-tagline">English for Global Opportunities</span>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="https://study.esol.education" class="btn-login">LOGIN IN <i class="fa-solid fa-user" style="margin-left:5px;"></i></a>
+                    <div class="footer-links">
+                        <a href="how-youll-learn.html#courses">Online English Courses</a><span>|</span>
+                        <a href="how-youll-learn.html#liveclasses">Book a Class</a><span>|</span>
+                        <a href="scqf.html">Assessment</a><span>|</span>
+                        <a href="contact-us.html">Contact</a><span>|</span>
+                        <a href="about-us.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            successMsg.style.display = 'block';
+            e.target.reset();
+            setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+        }
+    </script>
+</body>
+</html>

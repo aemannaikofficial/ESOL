@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 – Beginner – ESOL Education</title>
+    <meta name="description"
+        content="Learn about the A1 Beginner English level under the SCQF framework. ESOL Awards with LEB Secure English Language Test are SCQF credit rated.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://esol.education/wp-content/uploads/2023/10/image003-100x100.png" sizes="32x32">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=20">
+
+    <style>
+        /* Page Specific Styles for Layout Parity */
+        .scqf-intro {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .scqf-info-box {
+            font-size: 1.15rem;
+            color: #111;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .scqf-main-heading {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+
+        .scqf-sub-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .level-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .level-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-levels {
+                order: -1;
+            }
+        }
+
+        .sidebar-levels {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            height: fit-content;
+        }
+
+        .sidebar-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #111;
+        }
+
+        .level-nav-list {
+            list-style: none;
+        }
+
+        .level-nav-list li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .level-nav-list li:last-child {
+            border-bottom: none;
+        }
+
+        .level-nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-weight: 600;
+            color: #444;
+            transition: color 0.3s;
+        }
+
+        .level-nav-list a:hover, .level-nav-list a.active {
+            color: var(--vibrant-blue);
+        }
+
+        .level-nav-list i {
+            font-size: 0.8em;
+            color: #ccc;
+        }
+
+        .level-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #eee;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .level-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .can-do-title {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .can-do-list {
+            list-style: none;
+        }
+
+        .can-do-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .can-do-list i {
+            color: var(--vibrant-blue);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <div class="container topbar-content">
+            <div class="topbar-right">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                        alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
+                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-user"></i> E Learning
+                    Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-wrap">
+            <div class="logo">
+                <a href="index.html"><img
+                        src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="how-youll-learn.html">How You'll Learn <i class="fa-solid fa-caret-down"
+                                style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="scqf.html" class="active-link" style="color: var(--vibrant-blue);">SCQF</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <i class="fa-solid fa-bars" style="color: var(--primary-blue); font-size: 24px;"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="scqf-intro">
+        <div class="container">
+            <div class="grid-2" style="align-items: flex-start; gap: 40px;">
+                <div class="reveal ani-slideInUp">
+                    <p class="scqf-info-box">
+                        SCQF stands for Scottish Credit and Qualifications Framework. It provides a common understanding
+                        for describing qualification levels. The ESOL awards with LEB Secure English Language Test are
+                        SCQF credit rated and sit within the SCQF database.
+                    </p>
+                </div>
+                <div class="reveal ani-slideInRight">
+                    <img src="https://esol.education/wp-content/uploads/2023/09/Screenshot-2023-09-08-at-9.57.48-PM.png"
+                        alt="SCQF Database" style="width: 100%; border-radius: 10px;">
+                </div>
+            </div>
+
+            <div class="reveal ani-slideInUp" style="margin-top: 60px;">
+                <h1 class="scqf-main-heading">ESOL Awards with LEB Secure English Language Test have been SCQF Credit
+                    Rated</h1>
+                <p class="scqf-sub-text">mapped to SCQF Levels and are broadly comparable with other ESOL qualifications
+                    awarded.</p>
+            </div>
+
+            <div class="level-layout">
+                <!-- Main Level Description -->
+                <div class="level-content reveal ani-slideInLeft">
+                    <div style="margin-bottom: 40px;">
+                         <img src="https://esol.education/wp-content/uploads/2024/04/2-1024x546.png" alt="SCQF Level 2 Map" style="width: 100%; border-radius: 10px;">
+                    </div>
+                    
+                    <h2>A1 English Level</h2>
+                    <p class="level-desc">
+                        At the A1 level, learners can understand and use familiar everyday expressions and very basic
+                        phrases aimed at the satisfaction of simple needs. They can introduce themselves and others, ask
+                        and answer simple questions about personal details, and interact in a simple way provided the
+                        other person speaks slowly and clearly.
+                    </p>
+
+                    <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                    <ul class="can-do-list">
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Understand simple phrases and expressions used in familiar situations.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Use simple phrases and sentences to describe themselves, their facility, their
+                                immediate environment and other basic information.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Understand short, simple texts containing familiar vocabulary and basic
+                                information.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Write short, simple texts like postcards and notes about familiar topics.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sidebar Navigation -->
+                <aside class="sidebar-levels reveal ani-slideInRight">
+                    <div class="sidebar-title">
+                        <i class="fa-solid fa-angle-up"></i>
+                        <span>English levels</span>
+                    </div>
+                    <ul class="level-nav-list">
+                        <li><a href="scqf.html" class="active"><i class="fa-solid fa-minus"></i> A1 – Beginner</a></li>
+                        <li><a href="https://esol.education/a2-english-level/"><i class="fa-solid fa-minus"></i> A2 – Elementary</a></li>
+                        <li><a href="https://esol.education/b1-english-level/"><i class="fa-solid fa-minus"></i> B1 – Intermediate</a></li>
+                        <li><a href="https://esol.education/b2-english-level/"><i class="fa-solid fa-minus"></i> B2 – Lower Advanced</a></li>
+                        <li><a href="https://esol.education/c1-english-level/"><i class="fa-solid fa-minus"></i> C1 – Advanced</a></li>
+                        <li><a href="https://esol.education/c2-proficient/"><i class="fa-solid fa-minus"></i> C2 – Proficient</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom-row">
+                <div class="footer-bottom-left">
+                    <span class="footer-copy">© 2024 ESOL Awards</span>
+                    <span class="footer-tagline">English for Global Opportunities</span>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="https://study.esol.education" class="btn-login">
+                        LOGIN IN <i class="fa-solid fa-user" style="margin-left: 5px;"></i>
+                    </a>
+                    <div class="footer-links">
+                        <a href="how-youll-learn.html#courses">Online English Courses</a>
+                        <span>|</span>
+                        <a href="how-youll-learn.html#liveclasses">Book a Class</a>
+                        <span>|</span>
+                        <a href="scqf.html">Assessment</a>
+                        <span>|</span>
+                        <a href="contact-us.html">Contact</a>
+                        <span>|</span>
+                        <a href="about-us.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hand-written Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

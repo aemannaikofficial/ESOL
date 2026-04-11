@@ -1,0 +1,11 @@
+.gemini/
+*.webp
+*.png
+*.jpg
+*.jpeg
+!otago_logo.png
+!leb_logo.png
+!fife_logo.png
+live_esol.html
+original_source.html
+original_post_7.css
