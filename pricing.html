@@ -24,38 +24,38 @@
     <link rel="stylesheet" href="style.css?v=20">
 
     <style>
-        /* Page Specific Styles for Pricing Layout Parity */
+        /* Page Specific Overrides to preserve pricing-specific layouts while using index.html styles */
         .pricing-hero {
-            background: var(--primary-blue);
-            padding: 80px 0;
+            background-color: var(--primary-blue);
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://esol.education/wp-content/uploads/2023/10/esol-about-us-1024x516.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
             color: white;
             text-align: center;
         }
 
         .pricing-hero h1 {
             color: white;
-            font-size: 3.5rem;
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: 800;
             margin: 0;
-            text-transform: capitalize;
+            letter-spacing: 2px;
         }
 
         .pricing-section {
-            padding: 80px 0;
+            padding: 100px 0;
             background: #fff;
         }
 
-        .pricing-section-header {
-            text-align: center;
+        .pricing-section h2.section-title {
             margin-bottom: 60px;
+            color: var(--vibrant-blue);
         }
 
-        .pricing-section-header h2 {
-            font-size: 2.8rem;
-            color: #111;
-            font-weight: 700;
-        }
-
-        .pricing-table-wrap {
+        /* Ensure card grid matches index exactly */
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 40px;
@@ -63,166 +63,30 @@
             margin: 0 auto;
         }
 
-        @media (max-width: 991px) {
-            .pricing-table-wrap {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        .price-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 20px;
-            padding: 60px 40px;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .price-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--vibrant-blue);
-        }
-
-        .price-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #111;
-        }
-
-        .price-tag-wrap {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .price-currency {
-            font-size: 1.5rem;
-            vertical-align: top;
-            margin-top: 10px;
-            display: inline-block;
-        }
-
-        .price-amount {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--vibrant-blue);
-        }
-
-        .price-period {
-            display: block;
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.4;
-            margin-top: 5px;
-        }
-
-        .price-features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 40px;
-            text-align: left;
-        }
-
-        .price-features li {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 12px;
-            font-size: 1.05rem;
-            line-height: 1.4;
-        }
-
-        .price-features i {
-            color: var(--vibrant-blue);
-            font-size: 1.1rem;
-            margin-top: 3px;
-        }
-
-        .price-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--vibrant-blue);
-            color: white;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-        }
-
-        .price-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        /* SELT Specific Styles */
-        .selt-pricing-card {
-            background: #fff;
-            border: 2px solid var(--vibrant-blue);
-            border-radius: 25px;
-            padding: 60px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .selt-header h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-        }
-
-        .selt-price-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .selt-price-item {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #111;
-        }
-
-        .selt-price-item span {
-            color: var(--vibrant-blue);
-        }
-
-        .selt-price-item small {
-            font-weight: 400;
-            font-size: 1.1rem;
-            color: #666;
-        }
-
-        .selt-checklist {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            text-align: left;
-            gap: 15px 30px;
-            margin-bottom: 40px;
-        }
-
         @media (max-width: 768px) {
-            .selt-checklist {
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .selt-checklist li {
-            display: flex;
-            gap: 10px;
-            font-size: 1rem;
+        /* Adjusting info-card for pricing page use */
+        .pricing-card {
+            min-height: 550px;
         }
 
-        .selt-checklist i {
-            color: var(--vibrant-blue);
-            margin-top: 3px;
+        .pricing-card h3 {
+            font-size: 1.6rem;
+        }
+
+        .pricing-list li {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .selt-full-card {
+            max-width: 800px;
+            margin: 80px auto 0;
         }
     </style>
 </head>
@@ -272,135 +136,109 @@
     </section>
 
     <!-- Online Courses Section -->
-    <section class="pricing-section">
+    <section class="pricing-section bg-light">
         <div class="container">
-            <div class="pricing-section-header reveal ani-slideInUp">
-                <h2>Online Courses</h2>
-            </div>
-
-            <div class="pricing-table-wrap">
+            <h2 class="section-title reveal ani-slideInUp">Online Courses</h2>
+            <div class="pricing-grid">
                 <!-- All Courses -->
-                <div class="price-card reveal ani-slideInUp">
-                    <div class="price-header">
-                        <h3>All Courses</h3>
-                        <div class="price-tag-wrap">
-                            <span class="price-currency">£</span>
-                            <span class="price-amount">15</span>
-                            <span class="price-period">/course, total of £105<br>billed one time</span>
-                        </div>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> All 7 courses</li>
-                        <li><i class="fas fa-check"></i> Unlimited use of the materials</li>
-                        <li><i class="fas fa-check"></i> Access to Live Classes</li>
-                        <li><i class="fas fa-check"></i> Interactive content</li>
-                        <li><i class="fas fa-check"></i> Certification of Completion</li>
-                        <li><i class="fas fa-check"></i> 24-month access</li>
+                <div class="info-card pricing-card reveal ani-slideInUp">
+                    <h3>All Courses</h3>
+                    <hr class="pricing-divider">
+                    <p class="price">£15 <span style="font-size: 1.2rem; opacity: 0.8;">/course</span></p>
+                    <p class="price-sub">Total of £105 billed one time</p>
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> All 7 courses</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited use of the materials</li>
+                        <li><i class="fa-solid fa-check"></i> Access to Live Classes</li>
+                        <li><i class="fa-solid fa-check"></i> Interactive content</li>
+                        <li><i class="fa-solid fa-check"></i> Certification of Completion</li>
+                        <li><i class="fa-solid fa-check"></i> 24-month access</li>
                     </ul>
-                    <a href="https://study.esol.education/enrol/index.php?id=29" class="price-btn">Choose Plan</a>
+                    <a href="https://study.esol.education/enrol/index.php?id=29" class="btn-white-pill">CHOOSE PLAN</a>
                 </div>
 
                 <!-- One Course -->
-                <div class="price-card reveal ani-slideInUp delay-1">
-                    <div class="price-header">
-                        <h3>One Course</h3>
-                        <div class="price-tag-wrap">
-                            <span class="price-currency">£</span>
-                            <span class="price-amount">17</span>
-                            <span class="price-period">/course</span>
-                        </div>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Unlimited use of the materials</li>
-                        <li><i class="fas fa-check"></i> Access to Live Classes</li>
-                        <li><i class="fas fa-check"></i> Interactive content</li>
-                        <li><i class="fas fa-check"></i> Certification of Completion</li>
-                        <li><i class="fas fa-check"></i> 3-month access</li>
+                <div class="info-card pricing-card reveal ani-slideInUp delay-1">
+                    <h3>One Course</h3>
+                    <hr class="pricing-divider">
+                    <p class="price">£17 <span style="font-size: 1.2rem; opacity: 0.8;">/course</span></p>
+                    <p class="price-sub">Choose any level</p>
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> Unlimited use of the materials</li>
+                        <li><i class="fa-solid fa-check"></i> Access to Live Classes</li>
+                        <li><i class="fa-solid fa-check"></i> Interactive content</li>
+                        <li><i class="fa-solid fa-check"></i> Certification of Completion</li>
+                        <li><i class="fa-solid fa-check"></i> 3-month access</li>
                     </ul>
-                    <a href="https://esol.education/how-youll-learn/" class="price-btn">Choose Plan</a>
+                    <a href="https://esol.education/how-youll-learn/" class="btn-white-pill">CHOOSE PLAN</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Live Classes Section -->
-    <section class="pricing-section" style="background: #fdfdfd; border-top: 1px solid #eee;">
+    <section class="pricing-section bg-blue">
         <div class="container">
-            <div class="pricing-section-header reveal ani-slideInUp">
-                <h2>Live Classes</h2>
-            </div>
-
-            <div class="pricing-table-wrap">
+            <h2 class="section-title reveal ani-slideInUp" style="color: white;">Live Classes</h2>
+            <div class="pricing-grid">
                 <!-- 1-on-1 Classes -->
-                <div class="price-card reveal ani-slideInUp">
-                    <div class="price-header">
-                        <h3>1-on-1 Classes</h3>
-                        <div class="price-tag-wrap">
-                            <span class="price-currency">£</span>
-                            <span class="price-amount">4</span>
-                            <span class="price-period">/session £40<br>upon check out</span>
-                        </div>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> 10 sessions</li>
-                        <li><i class="fas fa-check"></i> Delivered by expert ESL teachers</li>
-                        <li><i class="fas fa-check"></i> Study any topic of your choice</li>
-                        <li><i class="fas fa-check"></i> Choose from various themes or topics in English</li>
-                        <li><i class="fas fa-check"></i> Pay monthly & cancel anytime</li>
-                        <li><i class="fas fa-check"></i> 25 minutes per session</li>
+                <div class="info-card pricing-card reveal ani-slideInUp" style="background: var(--primary-blue) !important;">
+                    <h3>1-on-1 Classes</h3>
+                    <hr class="pricing-divider">
+                    <p class="price">£4 <span style="font-size: 1.2rem; opacity: 0.8;">/session</span></p>
+                    <p class="price-sub">£40 total upon check out</p>
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> 10 sessions</li>
+                        <li><i class="fa-solid fa-check"></i> Delivered by expert ESL teachers</li>
+                        <li><i class="fa-solid fa-check"></i> Study any topic of your choice</li>
+                        <li><i class="fa-solid fa-check"></i> Various themes or topics in English</li>
+                        <li><i class="fa-solid fa-check"></i> Pay monthly & cancel anytime</li>
+                        <li><i class="fa-solid fa-check"></i> 25 minutes per session</li>
                     </ul>
-                    <a href="https://study.esol.education/enrol/index.php?id=30" class="price-btn">Choose Plan</a>
+                    <a href="https://study.esol.education/enrol/index.php?id=30" class="btn-white-pill">CHOOSE PLAN</a>
                 </div>
 
                 <!-- Group Classes -->
-                <div class="price-card reveal ani-slideInUp delay-1">
-                    <div class="price-header">
-                        <h3>Group Classes</h3>
-                        <div class="price-tag-wrap">
-                            <span class="price-currency">£</span>
-                            <span class="price-amount">3</span>
-                            <span class="price-period">/session £30<br>upon check out</span>
-                        </div>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> 10 sessions</li>
-                        <li><i class="fas fa-check"></i> Delivered by expert ESL teachers</li>
-                        <li><i class="fas fa-check"></i> Choose from various themes or topics in English</li>
-                        <li><i class="fas fa-check"></i> Pay monthly & cancel anytime</li>
-                        <li><i class="fas fa-check"></i> 50 minutes per session</li>
+                <div class="info-card pricing-card reveal ani-slideInUp delay-1" style="background: var(--primary-blue) !important;">
+                    <h3>Group Classes</h3>
+                    <hr class="pricing-divider">
+                    <p class="price">£3 <span style="font-size: 1.2rem; opacity: 0.8;">/session</span></p>
+                    <p class="price-sub">£30 total upon check out</p>
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> 10 sessions</li>
+                        <li><i class="fa-solid fa-check"></i> Delivered by expert ESL teachers</li>
+                        <li><i class="fa-solid fa-check"></i> Various themes or topics in English</li>
+                        <li><i class="fa-solid fa-check"></i> Pay monthly & cancel anytime</li>
+                        <li><i class="fa-solid fa-check"></i> 50 minutes per session</li>
                     </ul>
-                    <a href="https://study.esol.education/enrol/index.php?id=31" class="price-btn">Choose Plan</a>
+                    <a href="https://study.esol.education/enrol/index.php?id=31" class="btn-white-pill">CHOOSE PLAN</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SELT Section -->
-    <section class="pricing-section">
+    <section class="pricing-section bg-light">
         <div class="container">
-            <div class="pricing-section-header reveal ani-slideInUp">
-                <h2>English Proficiency Test</h2>
-            </div>
-
-            <div class="selt-pricing-card reveal ani-slideInUp">
-                <div class="selt-header">
-                    <h2>LEB Secure English Language Test (SELT)</h2>
+            <h2 class="section-title reveal ani-slideInUp">English Proficiency Test</h2>
+            <div class="info-card pricing-card selt-full-card reveal ani-slideInUp">
+                <h3>LEB Secure English Language Test (SELT)</h3>
+                <hr class="pricing-divider">
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 20px;">
+                    <p class="price" style="margin-bottom: 0;">£30 <span style="font-size: 1.1rem; opacity: 0.8;">/ 2 skills</span></p>
+                    <p class="price" style="margin-bottom: 0;">£60 <span style="font-size: 1.1rem; opacity: 0.8;">/ 4 skills</span></p>
                 </div>
-                <div class="selt-price-row">
-                    <div class="selt-price-item"><span>£30</span> <small>/ 2 skills</small></div>
-                    <div class="selt-price-item"><span>£60</span> <small>/ 4 skills</small></div>
-                </div>
-                <ul class="selt-checklist">
-                    <li><i class="fas fa-check"></i> Credit rated with entry onto the Scottish Credit and Qualifications
-                        Framework (SCQF) database</li>
-                    <li><i class="fas fa-check"></i> Awarded by the London Examinations Board (LEB)</li>
-                    <li><i class="fas fa-check"></i> Certificates with global recognition</li>
-                    <li><i class="fas fa-check"></i> Efficient grading and get results fast</li>
-                    <li><i class="fas fa-check"></i> Comprehensive skills assessment</li>
-                    <li><i class="fas fa-check"></i> Flexibility of online or Learning Center</li>
-                    <li><i class="fas fa-check"></i> Enhanced education or career opportunities</li>
+                <div style="margin-bottom: 30px;"></div>
+                <ul class="pricing-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; text-align: left;">
+                    <li><i class="fa-solid fa-check"></i> Credit rated with entry onto SCQF database</li>
+                    <li><i class="fa-solid fa-check"></i> Awarded by London Examinations Board (LEB)</li>
+                    <li><i class="fa-solid fa-check"></i> Certificates with global recognition</li>
+                    <li><i class="fa-solid fa-check"></i> Efficient grading and get results fast</li>
+                    <li><i class="fa-solid fa-check"></i> Comprehensive skills assessment</li>
+                    <li><i class="fa-solid fa-check"></i> Flexibility of online or Learning Center</li>
+                    <li><i class="fa-solid fa-check"></i> Enhanced education or career opportunities</li>
                 </ul>
-                <a href="https://selt.leb.education/pricing/" class="price-btn">Book Now</a>
+                <a href="https://selt.leb.education/pricing/" class="btn-white-pill">Book Now</a>
             </div>
         </div>
     </section>

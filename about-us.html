@@ -40,9 +40,24 @@
         }
 
         .mission-summary {
-            background: #fff;
-            padding: 60px 0 20px;
+            background: url('https://esol.education/wp-content/uploads/2023/10/esol-about-us-1024x516.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
             text-align: center;
+            position: relative;
+        }
+
+        .mission-summary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.6); /* Overlay for text readability if needed */
+            z-index: 0;
+        }
+
+        .mission-summary .container {
+            position: relative;
+            z-index: 1;
         }
 
         .mission-summary p {
@@ -141,29 +156,45 @@
             padding: 50px 30px;
             border-radius: 20px;
             transition: transform 0.3s;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
+        .offer-card.orange { background-image: url('https://esol.education/wp-content/uploads/2023/08/orange-home.png'); }
+        .offer-card.green { background-image: url('https://esol.education/wp-content/uploads/2023/08/green-home.png'); }
+        .offer-card.purple { background-image: url('https://esol.education/wp-content/uploads/2023/08/purple-home.png'); }
 
         .offer-card:hover {
             transform: translateY(-10px);
         }
 
         .offer-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--vibrant-blue);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            backdrop-filter: blur(5px);
         }
 
         .offer-card h3 {
             font-size: 1.3rem;
             text-transform: uppercase;
             margin-bottom: 0;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -296,21 +327,21 @@
             <h2 class="reveal ani-slideInUp">What We Offer</h2>
             <div class="offer-grid">
                 <!-- Online Courses -->
-                <div class="offer-card reveal ani-slideInUp">
+                <div class="offer-card orange reveal ani-slideInUp">
                     <div class="offer-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
                     <h3>Online Courses</h3>
                 </div>
                 <!-- Online Classes -->
-                <div class="offer-card reveal ani-slideInUp delay-1">
+                <div class="offer-card green reveal ani-slideInUp delay-1">
                     <div class="offer-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Online Classes</h3>
                 </div>
                 <!-- SELT -->
-                <div class="offer-card reveal ani-slideInUp delay-2">
+                <div class="offer-card purple reveal ani-slideInUp delay-2">
                     <div class="offer-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
