@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1 – Beginner – ESOL Education</title>
+    <title>SCQF English Levels – ESOL Education</title>
     <meta name="description"
-        content="Learn about the A1 Beginner English level under the SCQF framework. ESOL Awards with LEB Secure English Language Test are SCQF credit rated.">
+        content="Explore all SCQF English levels from A1 Beginner to C2 Proficient. ESOL Awards with LEB Secure English Language Test are SCQF credit rated.">
 
     <!-- Favicon -->
     <link rel="icon" href="https://esol.education/wp-content/uploads/2023/10/image003-100x100.png" sizes="32x32">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="style.css?v=20">
 
     <style>
-        /* Page Specific Styles for Layout Parity */
+        /* ── SCQF Intro Section ── */
         .scqf-intro {
             padding: 60px 0;
             background: #fff;
@@ -32,59 +32,57 @@
 
         .scqf-info-box {
             font-size: 1.15rem;
-            color: #111;
-            line-height: 1.6;
+            color: #333;
+            line-height: 1.7;
             margin-bottom: 30px;
         }
 
         .scqf-main-heading {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--primary-blue);
-            margin: 40px 0 20px;
+            margin: 40px 0 15px;
             font-weight: 700;
         }
 
         .scqf-sub-text {
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.05rem;
+            color: #555;
             margin-bottom: 40px;
         }
 
+        /* ── Level Layout ── */
         .level-layout {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 280px;
             gap: 40px;
             margin-top: 40px;
+            align-items: start;
         }
 
-        @media (max-width: 991px) {
-            .level-layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar-levels {
-                order: -1;
-            }
-        }
-
+        /* ── Sidebar ── */
         .sidebar-levels {
             background: #f8f9fa;
             border-radius: 15px;
             padding: 30px;
-            height: fit-content;
+            position: sticky;
+            top: 100px;
         }
 
         .sidebar-title {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #111;
+            font-family: var(--font-heading);
         }
 
         .level-nav-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
         .level-nav-list li {
@@ -98,32 +96,54 @@
         .level-nav-list a {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 0;
+            gap: 10px;
+            padding: 13px 8px;
             font-weight: 600;
-            color: #444;
-            transition: color 0.3s;
+            color: #555;
+            font-size: 1rem;
+            transition: color 0.25s, background 0.25s;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        .level-nav-list a:hover, .level-nav-list a.active {
+        .level-nav-list a:hover {
             color: var(--vibrant-blue);
+            background: rgba(10,10,157,0.05);
+        }
+
+        .level-nav-list a.active {
+            color: var(--vibrant-blue);
+            font-weight: 700;
         }
 
         .level-nav-list i {
-            font-size: 0.8em;
+            font-size: 0.75rem;
             color: #ccc;
         }
 
-        .level-content h2 {
+        .level-nav-list a.active i {
+            color: var(--vibrant-blue);
+        }
+
+        /* ── Level Content Panels ── */
+        .level-panel {
+            display: none;
+        }
+
+        .level-panel.active {
+            display: block;
+        }
+
+        .level-panel h2 {
             font-size: 2rem;
+            color: var(--primary-blue);
             margin-bottom: 20px;
             border-bottom: 3px solid #eee;
             padding-bottom: 15px;
-            display: inline-block;
         }
 
         .level-desc {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
             color: #444;
             margin-bottom: 30px;
@@ -131,21 +151,23 @@
 
         .can-do-title {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 20px;
             color: #111;
         }
 
         .can-do-list {
             list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
         }
 
         .can-do-list li {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 14px;
+            margin-bottom: 14px;
             font-size: 1.05rem;
             line-height: 1.5;
         }
@@ -154,6 +176,63 @@
             color: var(--vibrant-blue);
             font-size: 1.2rem;
             margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .level-map-img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* ── Mobile Responsive ── */
+        @media (max-width: 900px) {
+            .level-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-levels {
+                position: static;
+                order: -1;
+            }
+
+            .level-nav-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .level-nav-list li {
+                border-bottom: none;
+                flex: 0 0 auto;
+            }
+
+            .level-nav-list a {
+                background: #eef0f8;
+                border-radius: 50px;
+                padding: 8px 18px;
+                font-size: 0.9rem;
+            }
+
+            .level-nav-list a.active {
+                background: var(--vibrant-blue);
+                color: white;
+            }
+
+            .level-nav-list a.active i {
+                color: white;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .scqf-main-heading {
+                font-size: 1.5rem;
+            }
+
+            .level-panel h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -198,81 +277,145 @@
     <!-- Main Content -->
     <main class="scqf-intro">
         <div class="container">
-            <div class="grid-2" style="align-items: flex-start; gap: 40px;">
-                <div class="reveal ani-slideInUp">
-                    <p class="scqf-info-box">
-                        SCQF stands for Scottish Credit and Qualifications Framework. It provides a common understanding
-                        for describing qualification levels. The ESOL awards with LEB Secure English Language Test are
-                        SCQF credit rated and sit within the SCQF database.
-                    </p>
-                </div>
-                <div class="reveal ani-slideInRight">
-                    <img src="https://esol.education/wp-content/uploads/2023/09/Screenshot-2023-09-08-at-9.57.48-PM.png"
-                        alt="SCQF Database" style="width: 100%; border-radius: 10px;">
-                </div>
+
+            <!-- Intro: SCQF Overview -->
+            <div class="grid-2 reveal ani-slideInUp" style="align-items: flex-start; gap: 40px;">
+                <p class="scqf-info-box">
+                    SCQF stands for Scottish Credit and Qualifications Framework. It provides a common understanding
+                    for describing qualification levels. The ESOL awards with LEB Secure English Language Test are
+                    SCQF credit rated and sit within the SCQF database.
+                </p>
+                <img src="https://esol.education/wp-content/uploads/2023/09/Screenshot-2023-09-08-at-9.57.48-PM.png"
+                    alt="SCQF Database" style="width: 100%; border-radius: 10px;">
             </div>
 
             <div class="reveal ani-slideInUp" style="margin-top: 60px;">
-                <h1 class="scqf-main-heading">ESOL Awards with LEB Secure English Language Test have been SCQF Credit
-                    Rated</h1>
-                <p class="scqf-sub-text">mapped to SCQF Levels and are broadly comparable with other ESOL qualifications
-                    awarded.</p>
+                <h1 class="scqf-main-heading">ESOL Awards with LEB Secure English Language Test have been SCQF Credit Rated</h1>
+                <p class="scqf-sub-text">Mapped to SCQF Levels and are broadly comparable with other ESOL qualifications awarded.</p>
             </div>
 
+            <!-- Level Layout: tabs + content panels -->
             <div class="level-layout">
-                <!-- Main Level Description -->
-                <div class="level-content reveal ani-slideInLeft">
-                    <div style="margin-bottom: 40px;">
-                         <img src="https://esol.education/wp-content/uploads/2024/04/2-1024x546.png" alt="SCQF Level 2 Map" style="width: 100%; border-radius: 10px;">
+
+                <!-- ── Left: Content Panels ── -->
+                <div id="level-content-area">
+
+                    <!-- A1 Panel -->
+                    <div class="level-panel active" id="panel-a1">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/2-1024x546.png"
+                            alt="SCQF A1 Level Map">
+                        <h2>A1 – Beginner</h2>
+                        <p class="level-desc">At the A1 level, learners can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of simple needs. They can introduce themselves and others, ask and answer simple questions about personal details, and interact in a simple way provided the other person speaks slowly and clearly.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand simple phrases and expressions used in familiar situations.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Use simple phrases and sentences to describe themselves and their immediate environment.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand short, simple texts containing familiar vocabulary and basic information.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Write short, simple texts like postcards and notes about familiar topics.</span></li>
+                        </ul>
                     </div>
-                    
-                    <h2>A1 English Level</h2>
-                    <p class="level-desc">
-                        At the A1 level, learners can understand and use familiar everyday expressions and very basic
-                        phrases aimed at the satisfaction of simple needs. They can introduce themselves and others, ask
-                        and answer simple questions about personal details, and interact in a simple way provided the
-                        other person speaks slowly and clearly.
-                    </p>
 
-                    <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
-                    <ul class="can-do-list">
-                        <li>
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Understand simple phrases and expressions used in familiar situations.</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Use simple phrases and sentences to describe themselves, their facility, their
-                                immediate environment and other basic information.</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Understand short, simple texts containing familiar vocabulary and basic
-                                information.</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Write short, simple texts like postcards and notes about familiar topics.</span>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- A2 Panel -->
+                    <div class="level-panel" id="panel-a2">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/3-1024x546.png"
+                            alt="SCQF A2 Level Map">
+                        <h2>A2 – Elementary</h2>
+                        <p class="level-desc">At the A2 level, learners can understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. basic personal and family information, shopping, local geography, employment). They can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand short, simple texts and find specific, predictable information in simple everyday material.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Use a series of phrases and sentences to describe topics like family, people and living conditions.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Interact in a simple way to exchange information on familiar topics.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Write short, simple notes and messages relating to matters of immediate need.</span></li>
+                        </ul>
+                    </div>
 
-                <!-- Sidebar Navigation -->
-                <aside class="sidebar-levels reveal ani-slideInRight">
+                    <!-- B1 Panel -->
+                    <div class="level-panel" id="panel-b1">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/4-1024x546.png"
+                            alt="SCQF B1 Level Map">
+                        <h2>B1 – Intermediate</h2>
+                        <p class="level-desc">At the B1 level, learners can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc. They can deal with most situations likely to arise whilst travelling in an area where the language is spoken and can produce simple connected text on topics which are familiar or of personal interest.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand the main points in straightforward factual texts on subjects of personal or professional relevance.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Connect phrases in a simple way to describe experiences, events, dreams, hopes and ambitions.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Deal with most situations likely to arise when traveling in English-speaking areas.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Write simple, connected text on topics which are familiar or of personal interest.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- B2 Panel -->
+                    <div class="level-panel" id="panel-b2">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/5-1024x546.png"
+                            alt="SCQF B2 Level Map">
+                        <h2>B2 – Lower Advanced</h2>
+                        <p class="level-desc">At the B2 level, learners can understand the main ideas of complex text on both concrete and abstract topics, including technical discussions in their field of specialisation. They can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Read and understand articles and reports concerned with contemporary problems in which writers adopt particular attitudes or viewpoints.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Produce clear, detailed text on a wide range of subjects and explain a viewpoint on a topical issue.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Write an essay or report, passing on information or giving reasons in support of or against a particular point of view.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- C1 Panel -->
+                    <div class="level-panel" id="panel-c1">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/6-1024x546.png"
+                            alt="SCQF C1 Level Map">
+                        <h2>C1 – Advanced</h2>
+                        <p class="level-desc">At the C1 level, learners can understand a wide range of demanding, longer texts, and recognise implicit meaning. They can express themselves fluently and spontaneously without much obvious searching for expressions. They can use language flexibly and effectively for social, academic and professional purposes.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand a wide range of demanding, longer texts including literary works, and recognise implicit meaning.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Express themselves fluently and spontaneously without much obvious searching for expressions.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Use language flexibly and effectively for social, academic and professional purposes.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Produce clear, well-structured, detailed text on complex subjects.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- C2 Panel -->
+                    <div class="level-panel" id="panel-c2">
+                        <img class="level-map-img"
+                            src="https://esol.education/wp-content/uploads/2024/04/7-1024x546.png"
+                            alt="SCQF C2 Level Map">
+                        <h2>C2 – Proficient</h2>
+                        <p class="level-desc">At the C2 level, learners can understand with ease virtually everything heard or read. They can summarise information from different spoken and written sources, reconstructing arguments and accounts in a coherent presentation. They can express themselves spontaneously, very fluently and precisely.</p>
+                        <h6 class="can-do-title">AT THIS LEVEL, INDIVIDUALS CAN:</h6>
+                        <ul class="can-do-list">
+                            <li><i class="fa-solid fa-check-circle"></i><span>Understand with ease virtually everything heard or read, including abstract and structurally complex texts.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Summarise information from different spoken and written sources, reconstructing arguments coherently.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Express themselves spontaneously, very fluently and precisely, differentiating finer shades of meaning.</span></li>
+                            <li><i class="fa-solid fa-check-circle"></i><span>Produce clear, smooth-flowing text in an appropriate style with effective logical structure.</span></li>
+                        </ul>
+                    </div>
+
+                </div><!-- /level-content-area -->
+
+                <!-- ── Right: Sidebar Navigation ── -->
+                <aside class="sidebar-levels">
                     <div class="sidebar-title">
-                        <i class="fa-solid fa-angle-up"></i>
-                        <span>English levels</span>
+                        <i class="fa-solid fa-layer-group" style="color: var(--vibrant-blue);"></i>
+                        <span>English Levels</span>
                     </div>
-                    <ul class="level-nav-list">
-                        <li><a href="scqf.html" class="active"><i class="fa-solid fa-minus"></i> A1 – Beginner</a></li>
-                        <li><a href="https://esol.education/a2-english-level/"><i class="fa-solid fa-minus"></i> A2 – Elementary</a></li>
-                        <li><a href="https://esol.education/b1-english-level/"><i class="fa-solid fa-minus"></i> B1 – Intermediate</a></li>
-                        <li><a href="https://esol.education/b2-english-level/"><i class="fa-solid fa-minus"></i> B2 – Lower Advanced</a></li>
-                        <li><a href="https://esol.education/c1-english-level/"><i class="fa-solid fa-minus"></i> C1 – Advanced</a></li>
-                        <li><a href="https://esol.education/c2-proficient/"><i class="fa-solid fa-minus"></i> C2 – Proficient</a></li>
+                    <ul class="level-nav-list" id="level-nav">
+                        <li><a href="#" data-target="panel-a1" class="active"><i class="fa-solid fa-minus"></i> A1 – Beginner</a></li>
+                        <li><a href="#" data-target="panel-a2"><i class="fa-solid fa-minus"></i> A2 – Elementary</a></li>
+                        <li><a href="#" data-target="panel-b1"><i class="fa-solid fa-minus"></i> B1 – Intermediate</a></li>
+                        <li><a href="#" data-target="panel-b2"><i class="fa-solid fa-minus"></i> B2 – Lower Advanced</a></li>
+                        <li><a href="#" data-target="panel-c1"><i class="fa-solid fa-minus"></i> C1 – Advanced</a></li>
+                        <li><a href="#" data-target="panel-c2"><i class="fa-solid fa-minus"></i> C2 – Proficient</a></li>
                     </ul>
                 </aside>
-            </div>
+
+            </div><!-- /level-layout -->
+
         </div>
     </main>
 
@@ -304,8 +447,41 @@
         </div>
     </footer>
 
-    <!-- Hand-written Script -->
+    <!-- Main Script -->
     <script src="script.js"></script>
+
+    <!-- SCQF Level Tab Switcher -->
+    <script>
+        (function () {
+            const navLinks = document.querySelectorAll('#level-nav a');
+            const panels = document.querySelectorAll('.level-panel');
+
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active from all links and panels
+                    navLinks.forEach(function (l) { l.classList.remove('active'); });
+                    panels.forEach(function (p) { p.classList.remove('active'); });
+
+                    // Activate clicked link and its target panel
+                    link.classList.add('active');
+                    const target = document.getElementById(link.getAttribute('data-target'));
+                    if (target) {
+                        target.classList.add('active');
+
+                        // On mobile, scroll smoothly to the content area
+                        if (window.innerWidth <= 900) {
+                            const headerH = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+                            const top = target.getBoundingClientRect().top + window.scrollY - headerH - 20;
+                            window.scrollTo({ top: top, behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+
 </body>
 
 </html>

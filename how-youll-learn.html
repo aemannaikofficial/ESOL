@@ -25,6 +25,23 @@
             text-align: left;
             margin-top: 50px;
         }
+        @media (max-width: 768px) {
+            .learning-hub-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .course-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .certificate-span {
+                grid-column: span 1 !important;
+            }
+        }
+        /* Ensure page sections are always visible (no invisible first section on mobile) */
+        #courses, #liveclasses, #TestSELT, #learninghub {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +64,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="how-youll-learn.html" class="active">How You'll Learn <i class="fa-solid fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
+                    <li><a href="how-youll-learn.html" class="active-link" style="color: var(--vibrant-blue);">How You'll Learn <i class="fa-solid fa-caret-down" style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="scqf.html">SCQF</a></li>
@@ -61,7 +78,7 @@
     </header>
 
     <!-- Improve your English skills with these courses -->
-    <section id="courses" class="section reveal bg-blue" style="padding-top: 70px;">
+    <section id="courses" class="section bg-blue" style="padding-top: 70px;">
         <div class="container">
             <h2 class="section-title">Courses for You​</h2>
             <div class="course-grid">

@@ -1201,6 +1201,105 @@ nav ul li:last-child a:hover {
     }
 }
 
+/* ── GLOBAL MOBILE FIXES ──────────────────────── */
+@media (max-width: 768px) {
+    /* Topbar: hide flag label text on very small, keep links usable */
+    .topbar-content {
+        justify-content: flex-end;
+    }
+
+    /* Footer bottom row: fully stack */
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-bottom-right {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .footer-links span {
+        display: none; /* hide | separators on mobile */
+    }
+
+    /* Pricing grid: always 1 col on mobile */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* About Us split hero: stack on mobile */
+    .about-split-hero {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+    }
+
+    .about-hero-left {
+        padding: 60px 24px !important;
+        justify-content: center !important;
+    }
+
+    .about-hero-right {
+        max-height: 300px;
+    }
+
+    /* Pricing hero title sizing */
+    .pricing-hero h1 {
+        font-size: 2.5rem !important;
+    }
+
+    /* About Us title bar */
+    .about-us-title-bar h1 {
+        font-size: 2.5rem !important;
+    }
+
+    /* Contact banner */
+    .contact-hero-banner h1 {
+        font-size: 2.5rem !important;
+    }
+
+    /* Contact form: full width captcha */
+    .captcha-container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* SCQF: stack grid */
+    .level-layout {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-wrap {
+        padding: 0 16px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom-row {
+        gap: 16px;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
 /* ── NEED HELP SECTION ───────────────────────── */
 .need-help-section {
     background: var(--primary-blue);
