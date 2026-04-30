@@ -21,63 +21,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20">
+    <link rel="stylesheet" href="style.css?v=21">
 
     <style>
         /* Page Specific Styles for About Us */
         .about-us-title-bar {
-            background-color: #020181;
-            padding: 40px 0;
+            background-color: var(--vibrant-blue);
+            padding: 45px 0;
             text-align: center;
+            min-height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .about-us-title-bar h1 {
             color: white;
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 62px;
+            font-weight: 700;
             text-transform: uppercase;
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-family: var(--font-heading);
         }
 
         .about-split-hero {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 500px;
+            grid-template-columns: 1.1fr 0.9fr;
+            min-height: 580px;
             background: #fff;
-            align-items: center;
+            align-items: stretch;
         }
 
         .about-hero-left {
-            background-color: #E63946; /* Vibrant red matching screenshot */
+            background-color: rgba(255, 0, 0, 0.57);
             color: white;
-            padding: 80px 60px;
-            height: 100%;
+            padding: 60px 10% 60px 15%;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-        }
-
-        .about-hero-left-content {
-            max-width: 500px;
-            text-align: left;
         }
 
         .about-hero-left h2 {
             color: white;
-            font-size: 2.2rem;
-            line-height: 1.4;
-            font-weight: 400;
+            font-size: 39px;
+            line-height: 1.3;
+            font-weight: 600;
             margin: 0;
+            font-family: var(--font-body);
         }
 
         .about-hero-left strong {
-            font-weight: 800;
+            font-weight: 700;
         }
 
         .about-hero-right {
-            height: 100%;
-            overflow: hidden;
+            position: relative;
         }
 
         .about-hero-right img {
@@ -87,169 +85,95 @@
             display: block;
         }
 
-        @media (max-width: 992px) {
-            .about-split-hero {
-                grid-template-columns: 1fr;
-            }
-            .about-hero-left {
-                justify-content: center;
-                text-align: center;
-                padding: 60px 20px;
-            }
-            .about-hero-left-content {
-                max-width: 100%;
-                text-align: center;
-            }
-        }
-
-        .mission-summary p {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.5rem;
-            line-height: 1.4;
-            color: #111;
-        }
-
         .about-content {
             padding: 80px 0;
             background: #fff;
         }
 
         .about-text-wrap {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #444;
+            padding: 0 20px;
+        }
+
+        .prominent-text {
+            color: var(--vibrant-blue);
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
         .about-text-wrap p {
+            font-size: 1.1rem;
+            color: #555;
             margin-bottom: 25px;
-        }
-
-        .about-text-wrap b, .about-text-wrap strong {
-            color: var(--vibrant-blue);
-        }
-
-        .closing-box {
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-        }
-
-        .closing-box p {
-            margin-bottom: 5px;
+            line-height: 1.8;
         }
 
         .who-we-are-section {
-            padding: 60px 0;
+            padding: 40px 0 80px;
             text-align: center;
-            background: #fff;
         }
 
-        .who-we-are-img {
+        .who-we-are-section img {
             max-width: 900px;
-            margin: 0 auto;
+            width: 95%;
         }
 
-        .vision-mission-grid {
+        .vision-mission-section {
             padding: 100px 0;
             background: var(--vibrant-blue);
             color: white;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            text-align: center;
         }
 
         .vision-mission-grid h2 {
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 25px;
-            text-align: center;
         }
 
         .vision-mission-grid p {
             font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
+            line-height: 1.75;
+            opacity: 0.9;
         }
 
-        .offer-section {
+        .affiliations-section {
             padding: 100px 0;
-            background: #fff;
             text-align: center;
         }
 
-        .offer-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 80px;
-            color: var(--primary-blue);
-        }
-
-        .offer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .offer-card {
-            background: #fff;
-            padding: 60px 40px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .offer-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-
-        .offer-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--vibrant-blue);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-
-        .offer-card h3 {
-            font-size: 1.4rem;
-            color: var(--primary-blue);
-            text-transform: uppercase;
+        .affiliations-section h2 {
+            color: var(--vibrant-blue);
+            font-size: 3rem;
+            margin-bottom: 60px;
             font-weight: 700;
         }
 
-        /* Top Bar Specific Replacements */
-        .topbar {
-            background-color: #f5f5f5;
-            padding: 10px 0;
-        }
-        
-        .topbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .topbar-right {
-            display: flex;
-            gap: 25px;
-        }
-
-        .topbar-right a {
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        @media (max-width: 992px) {
+            .about-split-hero {
+                grid-template-columns: 1fr;
+            }
+            .about-hero-left {
+                padding: 60px 20px;
+                text-align: center;
+                justify-content: center;
+            }
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            .about-us-title-bar h1 {
+                font-size: 40px;
+            }
         }
     </style>
 </head>
@@ -259,14 +183,11 @@
     <!-- Top Bar -->
     <div class="topbar">
         <div class="container topbar-content">
-            <div class="topbar-left">
-                <!-- Translation / Language placeholder -->
-            </div>
             <div class="topbar-right">
                 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
                         alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
-                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-book-reader"></i> E Learning
-                    Portal</a>
+                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-book-reader"></i> E
+                    Learning Portal</a>
             </div>
         </div>
     </div>
@@ -275,14 +196,14 @@
     <header>
         <div class="container nav-wrap">
             <div class="logo">
-                <a href="index.html"><img
-                        src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
+                <a href="index.html"><img src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png"
+                        alt="ESOL Logo"></a>
             </div>
             <nav>
                 <ul>
                     <li><a href="how-youll-learn.html">How You'll Learn <i class="fa-solid fa-caret-down"
                                 style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
-                    <li><a href="about-us.html" class="active-link" style="color: var(--vibrant-blue);">About Us</a></li>
+                    <li><a href="about-us.html" class="active-link">About Us</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="scqf.html">SCQF</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
@@ -304,28 +225,27 @@
     <!-- Split Hero Section -->
     <section class="about-split-hero reveal ani-fadeIn">
         <div class="about-hero-left">
-            <div class="about-hero-left-content">
-                <h2>
-                    <strong>We aim</strong> to be a <strong>trusted partner</strong> in achieving <strong>English proficiency</strong> and opening the doors to <strong>global opportunities.</strong>
-                </h2>
-            </div>
+            <h2>
+                <strong>We aim</strong> to be a <strong>trusted partner</strong> in achieving <strong>English
+                    proficiency</strong> and opening the doors to <strong>global opportunities.</strong>
+            </h2>
         </div>
         <div class="about-hero-right">
-            <img src="https://esol.education/wp-content/uploads/2023/10/esol-about-us-1024x516.jpg" alt="Join Shaw - ESOL Education Chair">
+            <img src="https://esol.education/wp-content/uploads/2023/10/esol-about-us-1024x516.jpg"
+                alt="Chair of ESOL Awards">
         </div>
     </section>
 
     <!-- Main Content -->
     <section class="about-content">
         <div class="container">
-            <div class="about-text-wrap reveal ani-slideInUp delay-1">
-                <p>
-                    <span style="color: #000a9d;"><b>At ESOL Awards, we are committed to providing affordable English
-                            courses, live classes, and a groundbreaking <span style="font-weight: 400;"><strong>LEB
-                                    Secure English Language Test (SELT) Credit rated with entry onto the Scottish Credit
-                                    and Qualifications Framework&nbsp; database.</strong> </span> Our tagline, “English
-                            for Global Opportunities,” reflects our deep-seated belief in the transformative power of
-                            English in today’s interconnected world.</b></span>
+            <div class="about-text-wrap reveal ani-slideInUp">
+                <p class="prominent-text">
+                    At ESOL Awards, we are committed to providing affordable English courses, live classes, and a
+                    groundbreaking LEB Secure English Language Test (SELT) Credit rated with entry onto the Scottish
+                    Credit and Qualifications Framework database. Our tagline, “English for Global Opportunities,”
+                    reflects our deep-seated belief in the transformative power of English in today’s interconnected
+                    world.
                 </p>
                 <p>
                     Not confined by borders or backgrounds, our intended audience includes everyone who aspires to
@@ -342,109 +262,75 @@
                     Please explore our courses, join our live classes, and begin your journey to English proficiency. We
                     are here to support you every step of the way.
                 </p>
-
-                <div class="closing-box">
-                    <p>Warm regards,</p>
-                    <p><strong>John Shaw</strong></p>
-                    <p>Chair</p>
-                    <p>ESOL Awards</p>
+                <div style="margin-top: 50px;">
+                    <p style="margin-bottom: 5px;">Warm regards,</p>
+                    <p style="margin-bottom: 5px;"><strong>John Shaw</strong></p>
+                    <p style="margin-bottom: 5px;">Chair</p>
+                    <p style="margin-bottom: 5px;">ESOL Awards</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who We Are Image Banner -->
+    <!-- Who We Are Section -->
     <section class="who-we-are-section">
         <div class="container">
-            <div class="who-we-are-img reveal ani-slideInUp">
-                <img src="https://esol.education/wp-content/uploads/2023/11/Who-we-are-removebg-preview-1024x199.png"
-                    alt="Who We Are">
-            </div>
+            <img src="https://esol.education/wp-content/uploads/2023/11/Who-we-are-removebg-preview-1024x199.png"
+                alt="Who We Are" class="reveal ani-slideInUp">
         </div>
     </section>
 
-    <!-- Vision & Mission Grid -->
-    <section class="vision-mission-grid">
-        <div class="container grid-2" style="gap: 80px;">
-            <div class="reveal ani-slideInLeft">
-                <h2>Vision</h2>
-                <p>
-                    We envision to become a leading provider of online English programs and assessments, widely
-                    recognized by institutions worldwide.
-                </p>
-            </div>
-            <div class="reveal ani-slideInRight">
-                <h2>Mission</h2>
-                <p>
-                    Our mission is to pave the way for global learners through our online English programs and
-                    assessments, carefully curated for international standards and qualifications.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Offer -->
-    <section class="offer-section">
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission-section">
         <div class="container">
-            <h2 class="reveal ani-slideInUp">What We Offer</h2>
-            <div class="offer-grid">
-                <!-- Online Courses -->
-                <div class="offer-card orange reveal ani-slideInUp">
-                    <div class="offer-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Online Courses</h3>
+            <div class="vision-mission-grid">
+                <div class="reveal ani-slideInLeft">
+                    <h2>Vision</h2>
+                    <p>
+                        We envision to become a leading provider of online English programs and assessments, widely
+                        recognized by institutions worldwide.
+                    </p>
                 </div>
-                <!-- Online Classes -->
-                <div class="offer-card green reveal ani-slideInUp delay-1">
-                    <div class="offer-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Online Classes</h3>
-                </div>
-                <!-- SELT -->
-                <div class="offer-card purple reveal ani-slideInUp delay-2">
-                    <div class="offer-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Secure English Language Test (SELT)</h3>
+                <div class="reveal ani-slideInRight">
+                    <h2>Mission</h2>
+                    <p>
+                        Our mission is to pave the way for global learners through our online English programs and
+                        assessments, carefully curated for international standards and qualifications.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Affiliations -->
-    <section class="section reveal" style="background: #fff; padding: 100px 0;">
-        <div class="container text-center">
-            <h2 class="section-title">Our Affiliations</h2>
-            <div class="affiliations-grid" style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
-                <a href="https://leb.education/" class="affiliation-card">
-                    <img src="leb_logo.png" alt="London Examinations Board" style="height: 120px; width: auto;">
-                </a>
-                <a href="how-youll-learn.html" class="affiliation-card">
-                    <img src="otago_logo.png" alt="Otago Polytechnic" style="height: 120px; width: auto;">
-                </a>
-                <a href="https://business.fife.ac.uk/scqf-credit-rating-service/" class="affiliation-card">
-                    <img src="fife_logo.png" alt="Fife College" style="height: 120px; width: auto;">
-                </a>
+    <!-- Affiliations Section -->
+    <section class="affiliations-section">
+        <div class="container">
+            <h2 class="reveal ani-slideInUp">Our Affiliations</h2>
+            <div class="reveal ani-fadeIn">
+                <img src="https://esol.education/wp-content/uploads/2023/11/Screenshot-2023-11-20-131652-removebg-preview.png"
+                    alt="London Examinations Board" style="max-width: 450px;">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: #020181; color: white; padding: 60px 0;">
+    <footer class="footer" style="background-color: var(--vibrant-blue); color: white; padding: 60px 0;">
         <div class="container">
-            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+            <div class="footer-content"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
                 <div class="footer-left">
-                    <img src="https://esol.education/wp-content/uploads/2023/06/ESOL__1_-removebg-preview.png" alt="ESOL Logo" style="height: 60px; margin-bottom: 15px;">
+                    <img src="https://esol.education/wp-content/uploads/2023/06/ESOL__1_-removebg-preview.png"
+                        alt="ESOL Logo" style="height: 60px; margin-bottom: 15px;">
                     <p style="margin: 0; opacity: 0.8;">© 2024 ESOL Awards</p>
                     <p style="margin: 0; opacity: 0.8;">English for Global Opportunities</p>
                 </div>
                 <div class="footer-right" style="text-align: right;">
-                    <a href="https://study.esol.education" class="btn-cta" style="margin-bottom: 20px; display: inline-block;">
+                    <a href="https://study.esol.education" class="btn-cta"
+                        style="margin-bottom: 20px; display: inline-block; background: #fff; color: var(--vibrant-blue) !important;">
                         LOGIN IN <i class="fa-solid fa-user" style="margin-left: 8px;"></i>
                     </a>
-                    <div class="footer-links" style="display: flex; gap: 15px; font-size: 0.9rem; opacity: 0.9; justify-content: flex-end; flex-wrap: wrap;">
+                    <div class="footer-links"
+                        style="display: flex; gap: 15px; font-size: 0.9rem; opacity: 0.9; justify-content: flex-end; flex-wrap: wrap;">
                         <a href="how-youll-learn.html#courses">Online English Courses</a>
                         <span>|</span>
                         <a href="how-youll-learn.html#liveclasses">Book a Class</a>
@@ -460,7 +346,6 @@
         </div>
     </footer>
 
-    <!-- Hand-written Script -->
     <script src="script.js"></script>
 </body>
 

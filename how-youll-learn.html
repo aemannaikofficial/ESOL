@@ -1,61 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How You'll Learn – ESOL Education</title>
-    <meta name="description" content="Discover how ESOL Education delivers flexible English language learning through self-paced courses, live classes, and a global virtual community.">
+    <meta name="description"
+        content="Discover how ESOL Education delivers flexible English language learning through self-paced courses, live classes, and a global virtual community.">
     <link rel="icon" href="https://esol.education/wp-content/uploads/2023/10/image003-100x100.png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=22">
     <style>
-        .learning-hub-section {
+        /* Page Specific Styles for How You'll Learn */
+        .page-title-bar {
             background-color: var(--vibrant-blue);
-            color: var(--white);
-            padding: 80px 0;
+            padding: 45px 0;
             text-align: center;
+            min-height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .learning-hub-inner {
+
+        .page-title-bar h1 {
+            color: white;
+            font-size: 62px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 1px;
+            font-family: var(--font-heading);
+        }
+
+        .section-title {
+            color: var(--vibrant-blue);
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .course-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            text-align: left;
-            margin-top: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
         }
-        @media (max-width: 768px) {
-            .learning-hub-inner {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
+
+        .course-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-image-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Square */
+            overflow: hidden;
+        }
+
+        .course-image-wrap img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--vibrant-blue);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+        }
+
+        .teacher-section {
+            background-color: #535ba2;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .teacher-section .section-title {
+            color: white;
+        }
+
+        .learning-hub-section {
+            padding: 100px 0;
+            background-color: var(--vibrant-blue);
+            color: white;
+        }
+
+        .learning-hub-section h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
             .course-grid {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 1fr 1fr;
             }
-            .certificate-span {
-                grid-column: span 1 !important;
+            .page-title-bar h1 {
+                font-size: 40px;
             }
         }
-        /* Ensure page sections are always visible (no invisible first section on mobile) */
-        #courses, #liveclasses, #TestSELT, #learninghub {
-            opacity: 1 !important;
-            visibility: visible !important;
+
+        @media (max-width: 600px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
+
     <!-- Top Bar -->
     <div class="topbar">
         <div class="container topbar-content">
-            <div class="topbar-left">
-                <!-- Translation / Language placeholder -->
-            </div>
             <div class="topbar-right">
                 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
                         alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
-                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-book-reader"></i> E Learning
-                    Portal</a>
+                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-book-reader"></i> E
+                    Learning Portal</a>
             </div>
         </div>
     </div>
@@ -64,12 +151,12 @@
     <header>
         <div class="container nav-wrap">
             <div class="logo">
-                <a href="index.html"><img
-                        src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
+                <a href="index.html"><img src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png"
+                        alt="ESOL Logo"></a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="how-youll-learn.html" class="active-link" style="color: var(--vibrant-blue);">How You'll Learn <i class="fa-solid fa-caret-down"
+                    <li><a href="how-youll-learn.html" class="active-link">How You'll Learn <i class="fa-solid fa-caret-down"
                                 style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
@@ -83,215 +170,100 @@
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="how-learn-hero" style="background: #020181; padding: 40px 0; text-align: center;">
+    <!-- Page Title Bar -->
+    <div class="page-title-bar reveal ani-fadeIn">
         <div class="container">
-            <h1 style="color: white; font-size: 3.5rem; font-weight: 800; text-transform: uppercase; margin: 0; letter-spacing: 2px;">How You'll Learn</h1>
+            <h1>HOW YOU'LL LEARN</h1>
         </div>
-    </section>
+    </div>
 
-    <!-- Improve your English skills with these courses -->
-    <section id="courses" class="section bg-blue" style="padding-top: 70px;">
+    <!-- Courses for You Section -->
+    <section id="courses" class="section">
         <div class="container">
-            <h2 class="section-title">Courses for You​</h2>
+            <h2 class="section-title reveal ani-slideInUp">Courses for You</h2>
             <div class="course-grid">
-                <!-- A1 -->
-                <div class="course-card reveal">
+                <!-- Course 1 -->
+                <div class="course-card reveal ani-slideInUp">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/A1-1024x1024.jpg" alt="A1 English Level">
-                    </div>
-                    <div class="card-content">
-                        <p>Get good language skills and grammar to communicate in everyday scenarios such as introducing yourself, talking about your hobbies, ordering food, giving a home tour, buying train tickets.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=3" class="btn-course">GET STARTED</a>
+                        <img src="https://esol.education/wp-content/uploads/2023/09/a1.jpg" alt="A1 Level">
+                        <div class="course-label">A1 Level - Beginner</div>
                     </div>
                 </div>
-                <!-- A2 -->
-                <div class="course-card reveal">
+                <!-- Course 2 -->
+                <div class="course-card reveal ani-slideInUp" style="animation-delay: 0.1s;">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/wedsa.png" alt="A2 English Level">
-                    </div>
-                    <div class="card-content">
-                        <p>Converse about your everyday life using practical language and grammar skills. Get more information about other people like knowing about their likes and interests, and their plans in the future.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=6" class="btn-course">GET STARTED</a>
+                        <img src="https://esol.education/wp-content/uploads/2023/09/a2.jpg" alt="A2 Level">
+                        <div class="course-label">A2 Level - Elementary</div>
                     </div>
                 </div>
-                <!-- B1 -->
-                <div class="course-card reveal">
+                <!-- Course 3 -->
+                <div class="course-card reveal ani-slideInUp" style="animation-delay: 0.2s;">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/B1-1024x1024.jpg" alt="B1 English Level">
-                    </div>
-                    <div class="card-content">
-                        <p>Improve your vocabulary and grammar skills, and deepen your understanding of the English Language. Use good language in English for conversing about subjects of general interest.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=4" class="btn-course">GET STARTED</a>
+                        <img src="https://esol.education/wp-content/uploads/2023/09/b1.jpg" alt="B1 Level">
+                        <div class="course-label">B1 Level - Intermediate</div>
                     </div>
                 </div>
-                <!-- B1+ -->
-                <div class="course-card reveal">
+                <!-- Course 4 -->
+                <div class="course-card reveal ani-slideInUp">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/B1-1-1024x1024.jpg" alt="B1+ English Level">
-                    </div>
-                    <div class="card-content">
-                        <p>Helps you with vocabulary, grammar skills, and comprehension. Use language for discussing topics of general interest and improve speaking skills.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=7" class="btn-course">GET STARTED</a>
+                        <img src="https://esol.education/wp-content/uploads/2023/09/b2.jpg" alt="B2 Level">
+                        <div class="course-label">B2 Level - Upper Intermediate</div>
                     </div>
                 </div>
-                <!-- B2 -->
-                <div class="course-card reveal">
+                <!-- Course 5 -->
+                <div class="course-card reveal ani-slideInUp" style="animation-delay: 0.1s;">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/B2-1024x1024.jpg" alt="B2 English Level">
-                    </div>
-                    <div class="card-content">
-                        <p>Expand and strengthen your grammar and vocabulary. Get the confidence to communicate in English across diverse settings and improve your language skill.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=8" class="btn-course">GET STARTED</a>
+                        <img src="https://esol.education/wp-content/uploads/2023/09/c1.jpg" alt="C1 Level">
+                        <div class="course-label">C1 Level - Advanced</div>
                     </div>
                 </div>
-                <!-- C1 -->
-                <div class="course-card reveal">
+                <!-- Course 6 -->
+                <div class="course-card reveal ani-slideInUp" style="animation-delay: 0.2s;">
                     <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/C1-1-1024x1024.jpg" alt="C1 English Level">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/c2.jpg" alt="C2 Level">
+                        <div class="course-label">C2 Level - Proficiency</div>
                     </div>
-                    <div class="card-content">
-                        <p>Read complex texts with confidence, and recognize explicit meaning within texts. Improve fluency in expressing yourself using social or academic language.</p>
-                        <a href="https://study.esol.education/enrol/index.php?id=15" class="btn-course">GET STARTED</a>
-                    </div>
-                </div>
-                <!-- C2 -->
-                <div class="course-card reveal">
-                    <div class="course-image-wrap">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/c22.png" alt="C2 English Level" style="height: 250px; object-fit: cover; width: 100%;">
-                    </div>
-                    <div class="card-content">
-                        <p>Designed for proficient English speakers seeking to refine their language skills to near-native fluency. This intensive program focuses on perfecting complex grammar structures, mastering advanced vocabulary, and honing critical thinking abilities through in-depth discussions and academic writing, enabling students to excel in high-level academic and professional contexts.</p>
-                        <a href="#" class="btn-course" style="pointer-events: none;">Coming soon</a>
-                    </div>
-                </div>
-                <!-- Certificate Showcase -->
-                <div class="reveal text-center certificate-span" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;">
-                    <h2 style="color: white; font-size: 2.2rem; font-family: var(--font-heading); margin-bottom: 20px;">Earn a certificate for every completed<br>course.</h2>
-                    <img src="https://esol.education/wp-content/uploads/2023/07/Screenshot-2023-07-10-at-1.10.56-PM-1024x744.png" alt="ESOL Certificate" style="max-width: 100%; width: 550px; border: 3px dashed var(--volt-yellow); margin-top: 10px; padding: 8px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Live Classes - Image Carousel (matching live site) -->
-    <section id="liveclasses" class="section teacher-section">
-        <div class="container text-center">
-            <h2 class="section-title">Live Classes</h2>
-            <div class="teacher-carousel-container reveal" style="position: relative; margin-top: 40px;">
-                <button class="carousel-nav-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
-                <div class="teacher-grid" style="margin-top: 0;">
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/Rachel-B1.png" alt="Rachel B1" loading="lazy">
-                        </div>
+    <!-- Teacher Section -->
+    <section id="liveclasses" class="teacher-section">
+        <div class="container">
+            <h2 class="section-title reveal ani-slideInUp">Live Classes</h2>
+            <p style="text-align: center; max-width: 800px; margin: -40px auto 60px; font-size: 1.2rem; line-height: 1.6;">
+                Our expert teachers are here to help you achieve your goals through interactive and engaging live sessions.
+            </p>
+            <div class="teacher-carousel-container reveal ani-fadeIn">
+                <!-- Simplified carousel for demonstration -->
+                <div class="course-grid">
+                    <div class="course-card" style="background: transparent; box-shadow: none;">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/t1.jpg" alt="Teacher" style="border-radius: 15px;">
                     </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/2-3.png" alt="Teacher 2" loading="lazy">
-                        </div>
+                    <div class="course-card" style="background: transparent; box-shadow: none;">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/t2.jpg" alt="Teacher" style="border-radius: 15px;">
                     </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/3-3.png" alt="Teacher 3" loading="lazy">
-                        </div>
+                    <div class="course-card" style="background: transparent; box-shadow: none;">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/t3.jpg" alt="Teacher" style="border-radius: 15px;">
                     </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/4-1.png" alt="Teacher 4" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/5-2.png" alt="Teacher 5" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/6-2.png" alt="Teacher 6" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/7-2.png" alt="Teacher 7" loading="lazy">
-                        </div>
-                    </div>
-
-                    <div class="teacher-card">
-                        <div class="teacher-photo-wrap">
-                            <img src="https://esol.education/wp-content/uploads/2023/09/8-1.png" alt="Teacher 8" loading="lazy">
-                        </div>
-                    </div>
-
-                </div>
-                <button class="carousel-nav-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-            <div class="carousel-dots-container"></div>
-        </div>
-    </section>
-
-    <!-- SELT Information -->
-    <section id="TestSELT" class="section reveal bg-light-gradient">
-        <div class="container grid-2" style="align-items: center;">
-            <div class="reveal">
-                <h2 class="section-title" style="text-align: left; color: var(--vibrant-blue);">London Examinations Board Secure English Language Test (SELT)</h2>
-                <ul class="feature-list" style="margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6;">
-                    <li><i class="fas fa-check-circle" style="color: #FF0000; margin-right: 12px; font-size: 1.3rem;"></i> Credit rated with entry onto the Scottish Credit and Qualifications Framework database</li>
-                    <li><i class="fas fa-check-circle" style="color: #FF0000; margin-right: 12px; font-size: 1.3rem;"></i> Globally recognized certificates from A1 - C2 English Levels</li>
-                    <li><i class="fas fa-check-circle" style="color: #FF0000; margin-right: 12px; font-size: 1.3rem;"></i> Options to take the test at home or Partner Institutions</li>
-                </ul>
-                <a href="https://scqf.org.uk/about-the-framework/scqf-database/" class="btn-cta" style="background: var(--vibrant-blue) !important; color: white !important;">Book Your Test</a>
-            </div>
-            <div class="reveal">
-                <img src="https://esol.education/wp-content/uploads/2024/03/ESOL-SELT-images.png" alt="SELT" style="width: 100%;">
-            </div>
-        </div>
-    </section>
-
-    <!-- SCQF Database Section -->
-    <section class="section reveal bg-light">
-        <div class="container text-center">
-            <h2 class="section-title" style="margin-bottom: 20px;">Check out LEB's registration with SCQF's Database</h2>
-            <div class="grid-2" style="align-items: center; margin-top: 40px;">
-                <ul class="step-list reveal" style="text-align: left;">
-                    <li><b>1.</b> <a href="https://scqf.org.uk/about-the-framework/scqf-database/" style="color: var(--vibrant-blue); font-weight: 700;">Go to the SCQF Database.</a></li>
-                    <li><b>2.</b> Search ‘London Examinations Board’ under the Owner of qualification/programme field.</li>
-                    <li><b>3.</b> Click the Search button.</li>
-                </ul>
-                <div class="reveal">
-                    <img src="https://esol.education/wp-content/uploads/2024/03/check-certificate-image-1024x500.png" alt="SCQF Database Search" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Learning Hub Section -->
-    <section id="learninghub" class="learning-hub-section reveal">
+    <section id="learninghub" class="learning-hub-section">
         <div class="container">
-            <h2 class="section-title" style="color: white; margin-bottom: 40px;">Learning Hub</h2>
-            <div class="learning-hub-inner">
-                <!-- Left: Screenshot Image -->
-                <div class="reveal ani-slideInUp">
-                    <img src="https://esol.education/wp-content/uploads/2023/09/LH-1024x724.png" alt="Learning Hub Community" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+            <h2 class="reveal ani-slideInUp">Learning Hub</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="reveal ani-slideInLeft">
+                    <p style="font-size: 1.25rem; line-height: 1.8;">
+                        Our Learning Hub is a one-stop-shop for all your English language needs. From resources to community support, we've got you covered.
+                    </p>
                 </div>
-                <!-- Right: Text content -->
-                <div class="reveal ani-slideInUp delay-1" style="display: flex; flex-direction: column; gap: 24px;">
-                    <div>
-                        <h3 style="color: var(--volt-yellow); font-size: 1.6rem; margin-bottom: 15px;">Put your English language to practice</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.7; color: #f0f0f0;">Learn and interact with teachers and other students around the globe.</p>
-                    </div>
-                    <div>
-                        <h3 style="color: var(--volt-yellow); font-size: 1.6rem; margin-bottom: 15px;">English with people around the world</h3>
-                        <p style="font-size: 1.1rem; line-height: 1.7; color: #f0f0f0;">Every month, a topic for discussion will be posted and we'd like you to comment, post photos, or send a recording on the featured topic.</p>
-                        <a href="https://esol.education/virtualcommunity/" class="btn-cta" style="background: white; color: var(--vibrant-blue) !important; margin-top: 20px; display: inline-block;">Learning Hub</a>
-                    </div>
+                <div class="reveal ani-slideInRight">
+                    <img src="https://esol.education/wp-content/uploads/2023/09/learning-hub.jpg" alt="Learning Hub" style="border-radius: 20px; width: 100%;">
                 </div>
             </div>
         </div>
@@ -300,17 +272,21 @@
     <!-- Footer -->
     <footer class="footer" style="background-color: #020181; color: white; padding: 60px 0;">
         <div class="container">
-            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+            <div class="footer-content"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
                 <div class="footer-left">
-                    <img src="https://esol.education/wp-content/uploads/2023/06/ESOL__1_-removebg-preview.png" alt="ESOL Logo" style="height: 60px; margin-bottom: 15px;">
+                    <img src="https://esol.education/wp-content/uploads/2023/06/ESOL__1_-removebg-preview.png"
+                        alt="ESOL Logo" style="height: 60px; margin-bottom: 15px;">
                     <p style="margin: 0; opacity: 0.8;">© 2024 ESOL Awards</p>
                     <p style="margin: 0; opacity: 0.8;">English for Global Opportunities</p>
                 </div>
                 <div class="footer-right" style="text-align: right;">
-                    <a href="https://study.esol.education" class="btn-cta" style="margin-bottom: 20px; display: inline-block;">
+                    <a href="https://study.esol.education" class="btn-cta"
+                        style="margin-bottom: 20px; display: inline-block; background: #fff; color: #020181 !important;">
                         LOGIN IN <i class="fa-solid fa-user" style="margin-left: 8px;"></i>
                     </a>
-                    <div class="footer-links" style="display: flex; gap: 15px; font-size: 0.9rem; opacity: 0.9; justify-content: flex-end; flex-wrap: wrap;">
+                    <div class="footer-links"
+                        style="display: flex; gap: 15px; font-size: 0.9rem; opacity: 0.9; justify-content: flex-end; flex-wrap: wrap;">
                         <a href="how-youll-learn.html#courses">Online English Courses</a>
                         <span>|</span>
                         <a href="how-youll-learn.html#liveclasses">Book a Class</a>
@@ -328,4 +304,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

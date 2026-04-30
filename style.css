@@ -6,8 +6,9 @@
 
 /* ── DESIGN TOKENS ──────────────────────────── */
 :root {
-    --primary-blue: #194685;
+    --primary-blue: #0A0A9D;
     --vibrant-blue: #0A0A9D;
+    --brand-red: #FF0000;
     --dark-navy: #050540;
     --volt-yellow: #F5FB38;
     --success-green: #39FC6B;
@@ -257,28 +258,42 @@ nav ul {
 }
 
 nav ul li a {
-    padding: 8px 14px;
-    border-radius: var(--radius-sm);
-    color: var(--text-dark);
+    padding: 8px 12px;
+    color: #000000;
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.05rem;
-    transition: background var(--transition), color var(--transition);
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+    text-decoration: none;
 }
 
-nav ul li a:hover {
-    background: rgba(25, 70, 133, 0.07);
+nav ul li a:hover,
+nav ul li a.active-link {
     color: var(--vibrant-blue);
 }
 
-/* Make sure Contact Us inherits same nav styling as original */
-nav ul li:last-child a {
-    background: transparent;
-    color: var(--text-dark) !important;
+nav ul li a.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    background-color: var(--vibrant-blue);
+    border-radius: 2px;
 }
 
-nav ul li:last-child a:hover {
-    color: var(--vibrant-blue) !important;
+nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    background-color: var(--vibrant-blue);
+    opacity: 0.7;
+    border-radius: 2px;
 }
 
 .burger {
