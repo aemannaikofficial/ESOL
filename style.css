@@ -1231,14 +1231,17 @@ nav ul li a:hover::after {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
-        width: 100% !important;
+        width: 100vw !important;
         height: 100vh !important;
-        background: #fff !important;
-        z-index: 9999 !important;
-        padding: 80px 32px 32px !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+        background-color: #ffffff !important;
+        background: #ffffff !important;
+        z-index: 999999 !important;
+        padding: 100px 40px 40px !important;
+        box-shadow: none !important;
         overflow-y: auto !important;
         flex-direction: column !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     /* Show it when JS adds .mobile-nav-open */
@@ -1256,23 +1259,56 @@ nav ul li a:hover::after {
         width: 100% !important;
     }
 
-    .elementor-nav-menu--dropdown .menu-item > a {
+    .elementor-nav-menu--dropdown .menu-item {
         display: block !important;
-        padding: 16px 0 !important;
-        font-size: 1.2rem !important;
-        font-weight: 700 !important;
-        color: var(--primary-blue) !important;
-        border-bottom: 1px solid rgba(0,0,0,0.07) !important;
-        font-family: var(--font-heading) !important;
-        text-decoration: none !important;
+        width: 100% !important;
+        border-bottom: 1px solid #eee !important;
     }
 
-    .elementor-nav-menu--dropdown .menu-item > a:hover {
-        color: var(--vibrant-blue) !important;
-        padding-left: 8px !important;
+    .elementor-nav-menu--dropdown .menu-item > a {
+        display: block !important;
+        padding: 20px 0 !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #0A0A9D !important;
+        font-family: 'Quicksand', sans-serif !important;
+        text-decoration: none !important;
+        text-align: left !important;
     }
 
     /* Sub-menu inside dropdown */
+    .elementor-nav-menu--dropdown .sub-menu {
+        display: block !important;
+        padding-left: 20px !important;
+        list-style: none !important;
+    }
+
+    .elementor-nav-menu--dropdown .sub-menu .menu-item > a {
+        padding: 12px 0 !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        border-bottom: none !important;
+    }
+
+    /* Close button inside menu */
+    .mobile-close-btn {
+        position: absolute !important;
+        top: 30px !important;
+        right: 30px !important;
+        background: #0A0A9D !important;
+        color: #fff !important;
+        border: none !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 50% !important;
+        font-size: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 1000000 !important;
+        line-height: 1 !important;
+    }
     .elementor-nav-menu--dropdown .sub-menu {
         display: block !important;
         list-style: none !important;
