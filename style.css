@@ -1318,9 +1318,12 @@ nav ul li a:hover::after {
 
     /* Sub-menu inside dropdown */
     .elementor-nav-menu--dropdown .sub-menu {
-        display: block !important;
+        display: none !important;
         padding-left: 16px !important;
         list-style: none !important;
+        margin-top: 5px !important;
+        background: rgba(10, 10, 157, 0.03) !important;
+        border-radius: 8px !important;
     }
 
     .elementor-nav-menu--dropdown .sub-menu .menu-item > a {
@@ -1335,10 +1338,12 @@ nav ul li a:hover::after {
         display: none !important; /* Hide the big X button since it's a card now, the toggle closes it */
     }
     .elementor-nav-menu--dropdown .sub-menu {
-        display: block !important;
-        list-style: none !important;
+        display: none !important;
         padding-left: 16px !important;
-        margin: 0 !important;
+        list-style: none !important;
+        margin-top: 5px !important;
+        background: rgba(10, 10, 157, 0.03) !important;
+        border-radius: 8px !important;
     }
 
     .elementor-nav-menu--dropdown .sub-menu li a {
@@ -2158,3 +2163,27 @@ nav ul li a.active-link::after {
         box-shadow: 0 0 0 0 rgba(0, 10, 157, 0);
     }
 }
+
+    /* Show when parent menu item has .submenu-open class */
+    .elementor-nav-menu--dropdown .menu-item.submenu-open > .sub-menu {
+        display: block !important;
+    }
+
+    /* Arrow indicator for items with submenus */
+    .elementor-nav-menu--dropdown .menu-item-has-children > a {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .elementor-nav-menu--dropdown .menu-item-has-children > a::after {
+        content: '+';
+        font-family: monospace;
+        font-size: 20px;
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+
+    .elementor-nav-menu--dropdown .menu-item-has-children.submenu-open > a::after {
+        content: '-';
+    }

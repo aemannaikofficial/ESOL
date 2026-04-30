@@ -69,8 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close when any nav link is clicked
             mobileDropdown.querySelectorAll('a').forEach(link => {
+            if (link.parentElement.classList.contains('menu-item-has-children')) {
+                link.addEventListener('click', (e) => {
+                    if (!link.parentElement.classList.contains('submenu-open')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Close other submenus
+                        mobileDropdown.querySelectorAll('.submenu-open').forEach(el => {
+                            if (el !== link.parentElement) el.classList.remove('submenu-open');
+                        });
+                        link.parentElement.classList.add('submenu-open');
+                    }
+                });
+            } else {
                 link.addEventListener('click', () => closeMenu(menuToggle, mobileDropdown));
-            });
+            }
+        });
         });
 
         // Close on Escape key
