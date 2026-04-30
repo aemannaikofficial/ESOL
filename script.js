@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
 
-    /* ── 1. INTERSECTION OBSERVER (Scroll Reveal) ─── */
+    /* â”€â”€ 1. INTERSECTION OBSERVER (Scroll Reveal) â”€â”€â”€ */
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 
-    /* ── 2. STICKY HEADER SHRINK ON SCROLL ─────────── */
+    /* â”€â”€ 2. STICKY HEADER SHRINK ON SCROLL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 60) {
@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
 
-    /* ── 3. ELEMENTOR MOBILE BURGER MENU TOGGLE ─────────
+    /* â”€â”€ 3. ELEMENTOR MOBILE BURGER MENU TOGGLE â”€â”€â”€â”€â”€â”€â”€â”€â”€
        Elementor's JS normally drives this; since we run
        as a static replica, we replicate the behaviour.
-    ─────────────────────────────────────────────────── */
+    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const menuToggle   = document.querySelector('.elementor-menu-toggle');
     const mobileDropdown = document.querySelector(
         '.elementor-nav-menu--dropdown.elementor-nav-menu__container'
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && mobileDropdown) {
 
-        // Inject a close (×) button at the top of the fullscreen menu
+        // Inject a close (Ã—) button at the top of the fullscreen menu
         if (!mobileDropdown.querySelector('.mobile-close-btn')) {
             const closeBtn = document.createElement('button');
             closeBtn.className  = 'mobile-close-btn';
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* ── 4. SMOOTH SCROLL FOR ALL ANCHOR LINKS ───────── */
+    /* â”€â”€ 4. SMOOTH SCROLL FOR ALL ANCHOR LINKS â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ── 5. COURSE CARD HOVER TILT EFFECT ─────────────── */
+    /* â”€â”€ 5. COURSE CARD HOVER TILT EFFECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     document.querySelectorAll('.course-card, .info-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect  = card.getBoundingClientRect();
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ── 6. TEACHER CAROUSEL HANDLER ─────────────────── */
+    /* â”€â”€ 6. TEACHER CAROUSEL HANDLER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     const carouselGrid = document.querySelector('.teacher-grid');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -171,3 +171,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
