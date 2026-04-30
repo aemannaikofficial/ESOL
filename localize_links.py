@@ -1,8 +1,7 @@
 import os
+from bs4 import BeautifulSoup
 import re
 
-# Mapping of live URLs to local filenames.
-# Order is important: longest paths must be replaced first!
 url_map = {
     'https://esol.education/about-us/': 'about-us.html',
     'http://esol.education/about-us/': 'about-us.html',
@@ -29,14 +28,25 @@ for filename in html_files:
         continue
     
     with open(filename, 'r', encoding='utf-8') as f:
-        content = f.read()
+        html = f.read()
     
-    # Replace the URLs
-    for url, local in url_map.items():
-        pattern = re.compile(re.escape(url), re.IGNORECASE)
-        content = pattern.sub(local, content)
+    soup = BeautifulSoup(html, 'html.parser')
     
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(content)
+    # Process only <a> tags
+    for a in soup.find_all('a', href=True):
+        href = a['href']
+        
+        # Check against url_map
+        for live_url, local_url in url_map.items():
+            if href == live_url:
+                a['href'] = local_url
+                break
+            elif href.startswith(live_url + '#'):
+                # Handle anchor links
+                a['href'] = local_url + href[len(live_url):]
+                break
 
-print("Links localized successfully.")
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+
+print("Links localized successfully using BeautifulSoup.")
