@@ -959,7 +959,7 @@ nav ul li a:hover::after {
     display: block;
 }
 
-/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FOOTER ───────────────────────────────── */
 .footer {
     background: var(--vibrant-blue);
     color: var(--white);
@@ -1141,6 +1141,30 @@ nav ul li a:hover::after {
     nav ul li:last-child a {
         display: inline-block;
     }
+
+
+    /* Mobile header: logo left, burger right */
+    .elementor-element-ba0e72c.e-con {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        padding: 10px 20px !important;
+    }
+    .elementor-element-1320158 { display: none !important; }
+    .elementor-element-924ad27 {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+    .elementor-element-425c400 {
+        display: flex !important;
+        flex: 0 0 auto !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+    }
+
 
     /* â”€â”€ ELEMENTOR MOBILE BURGER FIX â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
        Elementor hides the nav links & shows the toggle
