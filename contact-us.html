@@ -17,36 +17,45 @@
     <!-- Top Bar -->
     <div class="topbar">
         <div class="container topbar-content">
+            <div class="topbar-left">
+                <!-- Translation / Language placeholder -->
+            </div>
             <div class="topbar-right">
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
-                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-user"></i> E Learning Portal</a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                        alt="UK" class="topbar-flag"> English <i class="fa-solid fa-caret-down"></i></a>
+                <a href="https://study.esol.education" class="topbar-login"><i class="fa-solid fa-book-reader"></i> E Learning
+                    Portal</a>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header>
         <div class="container nav-wrap">
             <div class="logo">
-                <a href="index.html"><img src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
+                <a href="index.html"><img
+                        src="https://esol.education/wp-content/uploads/2023/06/ESOL-icon.png" alt="ESOL Logo"></a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="how-youll-learn.html">How You'll Learn <i class="fa-solid fa-caret-down" style="font-size:0.8em;margin-left:4px;"></i></a></li>
+                    <li><a href="how-youll-learn.html">How You'll Learn <i class="fa-solid fa-caret-down"
+                                style="font-size: 0.8em; margin-left: 4px;"></i></a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="scqf.html">SCQF</a></li>
-                    <li><a href="contact-us.html" class="active-link">Contact Us</a></li>
+                    <li><a href="contact-us.html" class="active-link" style="color: var(--vibrant-blue);">Contact Us</a></li>
                 </ul>
             </nav>
-            <div class="burger"><i class="fa-solid fa-bars" style="color:var(--primary-blue);font-size:24px;"></i></div>
+            <div class="burger">
+                <i class="fa-solid fa-bars" style="color: var(--primary-blue); font-size: 24px;"></i>
+            </div>
         </div>
     </header>
 
     <!-- Page Hero Banner -->
-    <section class="contact-hero-banner">
+    <section class="contact-hero-banner reveal ani-fadeIn">
         <div class="container">
-            <h1 class="reveal ani-slideInUp">CONTACT US</h1>
+            <h1>CONTACT US</h1>
         </div>
     </section>
 
@@ -58,7 +67,7 @@
                 <!-- Left: Support Agent Image -->
                 <div class="reveal ani-slideInLeft">
                     <div class="contact-image-container">
-                        <img src="https://esol.education/wp-content/uploads/2023/09/cc9-1-1024x576.png" alt="Support Agent">
+                        <img src="https://esol.education/wp-content/uploads/2023/09/cu.png" alt="Support Agent">
                     </div>
                 </div>
 
@@ -67,9 +76,9 @@
                     <form id="contact-form" class="contact-form-minimal" onsubmit="handleFormSubmit(event)">
                         <input type="text" name="name" class="form-field" placeholder="Name" required>
                         <input type="email" name="email" class="form-field" placeholder="Email" required>
-                        <textarea name="message" class="form-field" placeholder="Message" required></textarea>
+                        <textarea name="message" class="form-field" placeholder="Message" required style="min-height: 150px;"></textarea>
                         
-                        <div class="captcha-container">
+                        <div class="captcha-container" style="margin-bottom: 30px;">
                             <div class="captcha-left">
                                 <div class="captcha-checkbox">
                                     <input type="checkbox" required>
@@ -85,7 +94,7 @@
                         </div>
                         
                         <div style="text-align: left;">
-                            <button type="submit" class="btn-send-large">SEND</button>
+                            <button type="submit" class="btn-cta btn-large" style="width: 100%; border-radius: 12px; font-size: 1.2rem;">SEND</button>
                         </div>
 
                         <p id="form-success" style="display:none; color:#020181; font-weight:700; margin-top:20px; font-family:var(--font-heading);">
@@ -99,20 +108,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: #020181; color: white; padding: 60px 0;">
         <div class="container">
-            <div class="footer-bottom-row">
-                <div class="footer-bottom-left">
-                    <span class="footer-copy">© 2024 ESOL Awards</span>
-                    <span class="footer-tagline">English for Global Opportunities</span>
+            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+                <div class="footer-left">
+                    <img src="https://esol.education/wp-content/uploads/2023/06/ESOL__1_-removebg-preview.png" alt="ESOL Logo" style="height: 60px; margin-bottom: 15px;">
+                    <p style="margin: 0; opacity: 0.8;">© 2024 ESOL Awards</p>
+                    <p style="margin: 0; opacity: 0.8;">English for Global Opportunities</p>
                 </div>
-                <div class="footer-bottom-right">
-                    <a href="https://study.esol.education" class="btn-login">LOGIN IN <i class="fa-solid fa-user" style="margin-left:5px;"></i></a>
-                    <div class="footer-links">
-                        <a href="how-youll-learn.html#courses">Online English Courses</a><span>|</span>
-                        <a href="how-youll-learn.html#liveclasses">Book a Class</a><span>|</span>
-                        <a href="scqf.html">Assessment</a><span>|</span>
-                        <a href="contact-us.html">Contact</a><span>|</span>
+                <div class="footer-right" style="text-align: right;">
+                    <a href="https://study.esol.education" class="btn-cta" style="margin-bottom: 20px; display: inline-block;">
+                        LOGIN IN <i class="fa-solid fa-user" style="margin-left: 8px;"></i>
+                    </a>
+                    <div class="footer-links" style="display: flex; gap: 15px; font-size: 0.9rem; opacity: 0.9; justify-content: flex-end; flex-wrap: wrap;">
+                        <a href="how-youll-learn.html#courses">Online English Courses</a>
+                        <span>|</span>
+                        <a href="how-youll-learn.html#liveclasses">Book a Class</a>
+                        <span>|</span>
+                        <a href="scqf.html">Assessment</a>
+                        <span>|</span>
+                        <a href="contact-us.html">Contact</a>
+                        <span>|</span>
                         <a href="about-us.html">About Us</a>
                     </div>
                 </div>
