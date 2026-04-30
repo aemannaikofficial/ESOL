@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!mobileDropdown || !menuToggle) return;
         mobileDropdown.classList.add('mobile-nav-open');
         mobileDropdown.setAttribute('aria-hidden', 'false');
-        menuToggle.classList.add('is-active');
+        menuToggle.classList.add('elementor-active');
         menuToggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden'; // prevent bg scroll
     }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!mobileDropdown || !menuToggle) return;
         mobileDropdown.classList.remove('mobile-nav-open');
         mobileDropdown.setAttribute('aria-hidden', 'true');
-        menuToggle.classList.remove('is-active');
+        menuToggle.classList.remove('elementor-active');
         menuToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }

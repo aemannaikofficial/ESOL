@@ -1147,27 +1147,58 @@ nav ul li a:hover::after {
        via JS classes. Since we run static, we do it ourselves.
     ─────────────────────────────────────────────────── */
 
-    /* Show the hamburger toggle on mobile/tablet */
+    /* Aggressive override to ensure menu is NEVER hidden on mobile */
+    .elementor-menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
     .elementor-menu-toggle {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 6px;
-        background: var(--primary-blue);
-        color: #fff;
+        width: auto !important;
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        border-radius: 4px;
+        background: #000a9d !important;
+        color: #fff !important;
         cursor: pointer;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-left: auto;
-        transition: background 0.2s;
+        transition: all 0.2s;
         border: none;
         z-index: 1100;
         position: relative;
+        gap: 8px;
+    }
+
+    .elementor-menu-toggle i {
+        font-size: 20px;
+    }
+
+    /* Toggle visibility of open/close icons */
+    .elementor-menu-toggle__icon--close {
+        display: none !important;
+    }
+
+    .elementor-menu-toggle.elementor-active .elementor-menu-toggle__icon--open {
+        display: none !important;
+    }
+
+    .elementor-menu-toggle.elementor-active .elementor-menu-toggle__icon--close {
+        display: block !important;
+    }
+
+    .elementor-menu-toggle .mobile-menu-text {
+        display: inline-block !important;
+        font-family: inherit;
     }
 
     .elementor-menu-toggle:hover {
-        background: var(--dark-navy);
+        background: #194685 !important;
     }
 
     /* Hide the horizontal desktop nav links on mobile */
