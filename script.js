@@ -53,10 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeBtn.addEventListener('click', () => closeMenu(menuToggle, mobileDropdown));
             }
 
-            menuToggle.addEventListener('click', () => {
-                const isOpen = mobileDropdown.classList.contains('mobile-nav-open');
-                isOpen ? closeMenu(menuToggle, mobileDropdown) : openMenu(menuToggle, mobileDropdown);
-            });
+            menuToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Mobile menu toggle clicked');
+                const isOpen = mobileDropdown.classList.contains('mobile-nav-open') || mobileDropdown.classList.contains('elementor-active');
+                if (isOpen) {
+                    closeMenu(menuToggle, mobileDropdown);
+                    mobileDropdown.classList.remove('elementor-active');
+                } else {
+                    openMenu(menuToggle, mobileDropdown);
+                    mobileDropdown.classList.add('elementor-active');
+                }
+            }, true); // Use capture phase to intercept before Elementor
 
             // Close when any nav link is clicked
             mobileDropdown.querySelectorAll('a').forEach(link => {
@@ -76,6 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dropdown || !toggle) return;
         dropdown.classList.add('mobile-nav-open');
         dropdown.setAttribute('aria-hidden', 'false');
+        dropdown.style.setProperty('display', 'flex', 'important');
+        dropdown.style.setProperty('visibility', 'visible', 'important');
+        dropdown.style.setProperty('opacity', '1', 'important');
         toggle.classList.add('elementor-active');
         toggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden'; // prevent bg scroll
@@ -85,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dropdown || !toggle) return;
         dropdown.classList.remove('mobile-nav-open');
         dropdown.setAttribute('aria-hidden', 'true');
+        dropdown.style.setProperty('display', 'none', 'important');
         toggle.classList.remove('elementor-active');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';

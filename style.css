@@ -1244,8 +1244,9 @@ nav ul li a:hover::after {
         opacity: 1 !important;
     }
 
-    /* Show it when JS adds .mobile-nav-open */
-    .elementor-nav-menu--dropdown.elementor-nav-menu__container.mobile-nav-open {
+    /* Show it when JS adds .mobile-nav-open or Elementor adds .elementor-active */
+    .elementor-nav-menu--dropdown.elementor-nav-menu__container.mobile-nav-open,
+    .elementor-nav-menu--dropdown.elementor-nav-menu__container.elementor-active {
         display: flex !important;
     }
 
