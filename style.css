@@ -2187,3 +2187,29 @@ nav ul li a.active-link::after {
     .elementor-nav-menu--dropdown .menu-item-has-children.submenu-open > a::after {
         content: '-';
     }
+
+    /* About Us Hero Background Fix - Ensure the man's face is visible */
+    .elementor-element-5bf5f8b {
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+
+    @media (max-width: 767px) {
+        .elementor-element-5bf5f8b {
+            background-position: 70% center !important; /* Shift to show the person on the right more */
+            min-height: 350px !important;
+        }
+        
+        /* "Who we are" image - ensure it's full width and visible */
+        .elementor-element-acd2d0e img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+
+        /* Mission section text padding fix */
+        .elementor-element-c59a7b5 > .elementor-widget-container {
+            padding: 30px 15px !important;
+        }
+    }
+}
