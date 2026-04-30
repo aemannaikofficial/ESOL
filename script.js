@@ -29,31 +29,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
 
-    /* ── 3. MOBILE BURGER MENU TOGGLE ───────────────── */
-    const burger = document.querySelector('.burger');
-    const navUl  = document.querySelector('nav ul');
+    /* ── 3. ELEMENTOR MOBILE BURGER MENU TOGGLE ─────────
+       Elementor's JS normally drives this; since we run
+       as a static replica, we replicate the behaviour.
+    ─────────────────────────────────────────────────── */
+    const menuToggle   = document.querySelector('.elementor-menu-toggle');
+    const mobileDropdown = document.querySelector(
+        '.elementor-nav-menu--dropdown.elementor-nav-menu__container'
+    );
 
-    if (burger && navUl) {
-        burger.addEventListener('click', () => {
-            navUl.classList.toggle('nav-active');
-            const icon = burger.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            }
+    if (menuToggle && mobileDropdown) {
+
+        // Inject a close (×) button at the top of the fullscreen menu
+        if (!mobileDropdown.querySelector('.mobile-close-btn')) {
+            const closeBtn = document.createElement('button');
+            closeBtn.className  = 'mobile-close-btn';
+            closeBtn.innerHTML  = '&times;';
+            closeBtn.setAttribute('aria-label', 'Close menu');
+            mobileDropdown.prepend(closeBtn);
+
+            closeBtn.addEventListener('click', closeMenu);
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileDropdown.classList.contains('mobile-nav-open');
+            isOpen ? closeMenu() : openMenu();
         });
 
-        // Close menu when any nav link is clicked
-        navUl.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navUl.classList.remove('nav-active');
-                const icon = burger.querySelector('i');
-                if (icon) {
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                }
-            });
+        // Close when any nav link is clicked
+        mobileDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
+
+        // Close on Escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    }
+
+    function openMenu() {
+        if (!mobileDropdown || !menuToggle) return;
+        mobileDropdown.classList.add('mobile-nav-open');
+        mobileDropdown.setAttribute('aria-hidden', 'false');
+        menuToggle.classList.add('is-active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden'; // prevent bg scroll
+    }
+
+    function closeMenu() {
+        if (!mobileDropdown || !menuToggle) return;
+        mobileDropdown.classList.remove('mobile-nav-open');
+        mobileDropdown.setAttribute('aria-hidden', 'true');
+        menuToggle.classList.remove('is-active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     }
 
 
