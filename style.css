@@ -1229,15 +1229,17 @@ nav ul li a:hover::after {
     .elementor-nav-menu--dropdown.elementor-nav-menu__container {
         display: none !important;
         position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
+        top: 80px !important; /* Below the header */
+        left: 20px !important;
+        width: calc(100vw - 40px) !important;
+        height: auto !important;
+        max-height: calc(100vh - 100px) !important;
         background-color: #ffffff !important;
         background: #ffffff !important;
         z-index: 999999 !important;
-        padding: 100px 40px 40px !important;
-        box-shadow: none !important;
+        padding: 24px !important;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+        border-radius: 12px !important;
         overflow-y: auto !important;
         flex-direction: column !important;
         visibility: visible !important;
@@ -1266,26 +1268,39 @@ nav ul li a:hover::after {
         border-bottom: 1px solid #eee !important;
     }
 
+    .elementor-nav-menu--dropdown .menu-item:last-child {
+        border-bottom: none !important;
+    }
+
     .elementor-nav-menu--dropdown .menu-item > a {
         display: block !important;
-        padding: 20px 0 !important;
-        font-size: 20px !important;
+        padding: 16px 8px !important;
+        font-size: 18px !important;
         font-weight: 700 !important;
-        color: #0A0A9D !important;
+        color: #0A0A9D !important; /* Primary blue */
         font-family: 'Quicksand', sans-serif !important;
         text-decoration: none !important;
         text-align: left !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .elementor-nav-menu--dropdown .menu-item > a:hover,
+    .elementor-nav-menu--dropdown .menu-item > a:focus,
+    .elementor-nav-menu--dropdown .menu-item > a:active {
+        color: #194685 !important; /* Slightly lighter blue, NOT grey */
+        background-color: rgba(10, 10, 157, 0.05) !important; /* Very subtle blue highlight */
+        border-radius: 6px !important;
     }
 
     /* Sub-menu inside dropdown */
     .elementor-nav-menu--dropdown .sub-menu {
         display: block !important;
-        padding-left: 20px !important;
+        padding-left: 16px !important;
         list-style: none !important;
     }
 
     .elementor-nav-menu--dropdown .sub-menu .menu-item > a {
-        padding: 12px 0 !important;
+        padding: 12px 8px !important;
         font-size: 16px !important;
         font-weight: 500 !important;
         border-bottom: none !important;
@@ -1293,22 +1308,7 @@ nav ul li a:hover::after {
 
     /* Close button inside menu */
     .mobile-close-btn {
-        position: absolute !important;
-        top: 30px !important;
-        right: 30px !important;
-        background: #0A0A9D !important;
-        color: #fff !important;
-        border: none !important;
-        width: 44px !important;
-        height: 44px !important;
-        border-radius: 50% !important;
-        font-size: 30px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        cursor: pointer !important;
-        z-index: 1000000 !important;
-        line-height: 1 !important;
+        display: none !important; /* Hide the big X button since it's a card now, the toggle closes it */
     }
     .elementor-nav-menu--dropdown .sub-menu {
         display: block !important;
