@@ -1,6 +1,6 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-    /* â”€â”€ 1. INTERSECTION OBSERVER (Scroll Reveal) â”€â”€â”€ */
+    /* —— 1. INTERSECTION OBSERVER (Scroll Reveal) ——— */
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -16,7 +16,7 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 
-    /* â”€â”€ 2. STICKY HEADER SHRINK ON SCROLL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* —— 2. STICKY HEADER SHRINK ON SCROLL ——————————— */
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 60) {
@@ -29,64 +29,69 @@
     }, { passive: true });
 
 
-    /* â”€â”€ 3. ELEMENTOR MOBILE BURGER MENU TOGGLE â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    /* —— 3. ELEMENTOR MOBILE BURGER MENU TOGGLE ———————
        Elementor's JS normally drives this; since we run
        as a static replica, we replicate the behaviour.
-    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-    const menuToggle   = document.querySelector('.elementor-menu-toggle');
-    const mobileDropdown = document.querySelector(
+    ———————————————————————————————————————————————————— */
+    const menuToggles   = document.querySelectorAll('.elementor-menu-toggle');
+    const mobileDropdowns = document.querySelectorAll(
         '.elementor-nav-menu--dropdown.elementor-nav-menu__container'
     );
 
-    if (menuToggle && mobileDropdown) {
+    if (menuToggles.length > 0 && mobileDropdowns.length > 0) {
+        menuToggles.forEach((menuToggle, index) => {
+            const mobileDropdown = mobileDropdowns[index] || mobileDropdowns[0];
 
-        // Inject a close (Ã—) button at the top of the fullscreen menu
-        if (!mobileDropdown.querySelector('.mobile-close-btn')) {
-            const closeBtn = document.createElement('button');
-            closeBtn.className  = 'mobile-close-btn';
-            closeBtn.innerHTML  = '&times;';
-            closeBtn.setAttribute('aria-label', 'Close menu');
-            mobileDropdown.prepend(closeBtn);
+            // Inject a close (x) button at the top of the fullscreen menu
+            if (!mobileDropdown.querySelector('.mobile-close-btn')) {
+                const closeBtn = document.createElement('button');
+                closeBtn.className  = 'mobile-close-btn';
+                closeBtn.innerHTML  = '&times;';
+                closeBtn.setAttribute('aria-label', 'Close menu');
+                mobileDropdown.prepend(closeBtn);
 
-            closeBtn.addEventListener('click', closeMenu);
-        }
+                closeBtn.addEventListener('click', () => closeMenu(menuToggle, mobileDropdown));
+            }
 
-        menuToggle.addEventListener('click', () => {
-            const isOpen = mobileDropdown.classList.contains('mobile-nav-open');
-            isOpen ? closeMenu() : openMenu();
-        });
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileDropdown.classList.contains('mobile-nav-open');
+                isOpen ? closeMenu(menuToggle, mobileDropdown) : openMenu(menuToggle, mobileDropdown);
+            });
 
-        // Close when any nav link is clicked
-        mobileDropdown.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeMenu);
+            // Close when any nav link is clicked
+            mobileDropdown.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => closeMenu(menuToggle, mobileDropdown));
+            });
         });
 
         // Close on Escape key
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeMenu();
+            if (e.key === 'Escape') {
+                menuToggles.forEach((t, i) => closeMenu(t, mobileDropdowns[i] || mobileDropdowns[0]));
+            }
         });
     }
 
-    function openMenu() {
-        if (!mobileDropdown || !menuToggle) return;
-        mobileDropdown.classList.add('mobile-nav-open');
-        mobileDropdown.setAttribute('aria-hidden', 'false');
-        menuToggle.classList.add('elementor-active');
-        menuToggle.setAttribute('aria-expanded', 'true');
+    function openMenu(toggle, dropdown) {
+        if (!dropdown || !toggle) return;
+        dropdown.classList.add('mobile-nav-open');
+        dropdown.setAttribute('aria-hidden', 'false');
+        toggle.classList.add('elementor-active');
+        toggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden'; // prevent bg scroll
     }
 
-    function closeMenu() {
-        if (!mobileDropdown || !menuToggle) return;
-        mobileDropdown.classList.remove('mobile-nav-open');
-        mobileDropdown.setAttribute('aria-hidden', 'true');
-        menuToggle.classList.remove('elementor-active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+    function closeMenu(toggle, dropdown) {
+        if (!dropdown || !toggle) return;
+        dropdown.classList.remove('mobile-nav-open');
+        dropdown.setAttribute('aria-hidden', 'true');
+        toggle.classList.remove('elementor-active');
+        toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 
 
-    /* â”€â”€ 4. SMOOTH SCROLL FOR ALL ANCHOR LINKS â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* —— 4. SMOOTH SCROLL FOR ALL ANCHOR LINKS ———————— */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -102,7 +107,7 @@
     });
 
 
-    /* â”€â”€ 5. COURSE CARD HOVER TILT EFFECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* —— 5. COURSE CARD HOVER TILT EFFECT ————————————— */
     document.querySelectorAll('.course-card, .info-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect  = card.getBoundingClientRect();
@@ -115,7 +120,7 @@
         });
     });
 
-    /* â”€â”€ 6. TEACHER CAROUSEL HANDLER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* —— 6. TEACHER CAROUSEL HANDLER —————————————————— */
     const carouselGrid = document.querySelector('.teacher-grid');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -171,4 +176,3 @@
     }
 
 });
-

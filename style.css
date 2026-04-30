@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    ESOL Education â€” Handcrafted CSS
    Fonts: Quicksand (headings) Â· Hind Siliguri (body)
    Colors: Primary Blue Â· Vibrant Blue Â· Dark Navy
@@ -1147,11 +1147,18 @@ nav ul li a:hover::after {
        via JS classes. Since we run static, we do it ourselves.
     â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-    /* Aggressive override to ensure menu is NEVER hidden on mobile */
+    /* Force navigation widget to be visible on all screen sizes, overriding Elementor hidden classes */
+    .elementor-element-16c4c7c.elementor-hidden-mobile,
+    .elementor-element-16c4c7c.elementor-hidden-tablet {
+        display: block !important;
+    }
+
+    /* Aggressive override to ensure menu toggle is ALWAYS visible on mobile/tablet */
     .elementor-menu-toggle {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        pointer-events: auto !important;
     }
 
     .elementor-menu-toggle {
@@ -1159,20 +1166,32 @@ nav ul li a:hover::after {
         align-items: center;
         justify-content: center;
         width: auto !important;
-        min-width: 44px;
+        min-width: 50px;
         height: 44px;
-        padding: 0 12px;
-        border-radius: 4px;
+        padding: 0 15px;
+        border-radius: 50px;
         background: #000a9d !important;
         color: #fff !important;
         cursor: pointer;
-        font-size: 1.4rem;
+        font-size: 14px;
+        font-weight: bold;
         margin-left: auto;
         transition: all 0.2s;
-        border: none;
+        border: 2px solid #fff;
         z-index: 1100;
         position: relative;
         gap: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Ensure icons are visible or show fallback text */
+    .elementor-menu-toggle::after {
+        content: "MENU";
+        font-family: sans-serif;
+    }
+    
+    .elementor-menu-toggle.elementor-active::after {
+        content: "CLOSE";
     }
 
     .elementor-menu-toggle i {
@@ -1201,9 +1220,8 @@ nav ul li a:hover::after {
         background: #194685 !important;
     }
 
-    /* Hide the horizontal desktop nav links on mobile */
-    .elementor-hidden-mobile .elementor-nav-menu--main,
-    .elementor-hidden-tablet .elementor-nav-menu--main {
+    /* Hide the horizontal desktop nav links on mobile and tablet */
+    .elementor-nav-menu--main.elementor-nav-menu__container.elementor-nav-menu--layout-horizontal {
         display: none !important;
     }
 
